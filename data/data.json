@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "name": "FPGA bring-up",
+    "category": "Hardware",
+    "status": "In Progress",
+    "value": 42,
+    "date": "2025-08-10"
+  },
+  {
+    "id": 2,
+    "name": "API gateway",
+    "category": "Software",
+    "status": "Open",
+    "value": 15,
+    "date": "2025-08-08"
+  },
+  {
+    "id": 3,
+    "name": "DB migration",
+    "category": "Ops",
+    "status": "Blocked",
+    "value": 70,
+    "date": "2025-08-06"
+  },
+  {
+    "id": 4,
+    "name": "Telemetry parser",
+    "category": "Software",
+    "status": "Done",
+    "value": 5,
+    "date": "2025-07-31"
+  },
+  {
+    "id": 5,
+    "name": "Power board A",
+    "category": "Hardware",
+    "status": "Open",
+    "value": 88,
+    "date": "2025-08-12"
+  },
+  {
+    "id": 6,
+    "name": "Firmware v1.2",
+    "category": "Hardware",
+    "status": "In Progress",
+    "value": 33,
+    "date": "2025-08-01"
+  },
+  {
+    "id": 7,
+    "name": "K8s cluster",
+    "category": "Ops",
+    "status": "In Progress",
+    "value": 60,
+    "date": "2025-08-09"
+  },
+  {
+    "id": 8,
+    "name": "UI polishing",
+    "category": "Software",
+    "status": "Open",
+    "value": 12,
+    "date": "2025-08-03"
+  },
+  {
+    "id": 9,
+    "name": "Site reliability",
+    "category": "Ops",
+    "status": "Done",
+    "value": 25,
+    "date": "2025-07-28"
+  },
+  {
+    "id": 10,
+    "name": "Sensor driver",
+    "category": "Hardware",
+    "status": "Blocked",
+    "value": 54,
+    "date": "2025-08-05"
+  },
+  {
+    "id": 11,
+    "name": "Build pipeline",
+    "category": "Ops",
+    "status": "Open",
+    "value": 44,
+    "date": "2025-08-02"
+  },
+  {
+    "id": 12,
+    "name": "Auth service",
+    "category": "Software",
+    "status": "Done",
+    "value": 9,
+    "date": "2025-07-30"
+  }
+]
