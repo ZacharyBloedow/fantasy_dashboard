@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>My Shareable Table Dashboard</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
 
     <!-- Tabulator CSS -->
     <link
@@ -11,58 +11,23 @@
       rel="stylesheet"
     />
 
-    <!-- Tabulator JS -->
-    <script src="https://unpkg.com/tabulator-tables@5.6.2/dist/js/tabulator.min.js"></script>
-
     <!-- Your CSS -->
     <link rel="stylesheet" href="assets/styles.css" />
-
-    <!-- Your JS (must be after Tabulator) -->
-    <script src="js/app.js"></script>
   </head>
   <body>
-    <header class="wrap">
-      <h1>Project Dashboard</h1>
-      <p class="sub">
-        Search and filter the main table. Share this page link with anyone.
-      </p>
+    <header>
+      <h1>Dashboard</h1>
     </header>
 
-    <section class="wrap card controls">
-      <div class="control-row">
-        <input
-          id="search"
-          type="search"
-          placeholder="🔎 Global search (any column)"
-        />
-        <select id="category">
-          <option value="">Category (all)</option>
-          <option>Hardware</option>
-          <option>Software</option>
-          <option>Ops</option>
-        </select>
-        <select id="status" multiple title="Hold Ctrl/Cmd to multi-select">
-          <option>Open</option>
-          <option>In Progress</option>
-          <option>Blocked</option>
-          <option>Done</option>
-        </select>
-        <input id="minVal" type="number" placeholder="Min value" />
-        <input id="maxVal" type="number" placeholder="Max value" />
-        <button id="clear">Clear filters</button>
-        <button id="download">Download CSV</button>
-      </div>
+    <section>
+      <input id="search" placeholder="Global search" />
+      <div id="table"></div>
     </section>
 
-    <section class="wrap card">
-      <div id="table" style="width: 100%"></div>
-    </section>
+    <!-- Tabulator JS (must load before app.js) -->
+    <script src="https://unpkg.com/tabulator-tables@5.6.2/dist/js/tabulator.min.js"></script>
 
-    <footer class="wrap foot">
-      <small
-        >Hosted free on GitHub Pages • Filters are all in-browser (no server
-        needed)</small
-      >
-    </footer>
+    <!-- Your JS -->
+    <script src="js/app.js"></script>
   </body>
 </html>
