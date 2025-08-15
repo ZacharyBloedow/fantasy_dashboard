@@ -2,7 +2,7 @@ async function main() {
   try {
     const res = await fetch("data/data.json");
     const data = await res.json();
-
+    console.log(data);
     const table = new Tabulator("#table", {
       data,
       layout: "fitColumns",
