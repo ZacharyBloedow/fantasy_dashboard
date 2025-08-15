@@ -1,6 +1,5 @@
 [
   {
-    "id": 1,
     "name": "FPGA bring-up",
     "category": "Hardware",
     "status": "In Progress",
@@ -8,7 +7,6 @@
     "date": "2025-08-10"
   },
   {
-    "id": 2,
     "name": "API gateway",
     "category": "Software",
     "status": "Open",
@@ -16,7 +14,6 @@
     "date": "2025-08-08"
   },
   {
-    "id": 3,
     "name": "DB migration",
     "category": "Ops",
     "status": "Blocked",
@@ -24,7 +21,6 @@
     "date": "2025-08-06"
   },
   {
-    "id": 4,
     "name": "Telemetry parser",
     "category": "Software",
     "status": "Done",
