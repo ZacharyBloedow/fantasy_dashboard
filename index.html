@@ -19,12 +19,28 @@
       <h1>Dashboard</h1>
     </header>
 
-    <section>
+    <section class="controls">
       <input id="search" placeholder="Global search" />
+      <select id="category">
+        <option value="">All categories</option>
+        <option>Hardware</option>
+        <option>Software</option>
+        <option>Ops</option>
+      </select>
+      <select id="status">
+        <option value="">All status</option>
+        <option>Open</option>
+        <option>In Progress</option>
+        <option>Blocked</option>
+        <option>Done</option>
+      </select>
+    </section>
+
+    <section>
       <div id="table"></div>
     </section>
 
-    <!-- Tabulator JS (must load before app.js) -->
+    <!-- Tabulator JS -->
     <script src="https://unpkg.com/tabulator-tables@5.6.2/dist/js/tabulator.min.js"></script>
 
     <!-- Your JS -->

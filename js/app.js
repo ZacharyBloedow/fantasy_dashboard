@@ -1,39 +1,55 @@
 async function main() {
+  let data;
   try {
     const res = await fetch("data/data.json");
-    const data = await res.json();
-    console.log(data);
-    const table = new Tabulator("#table", {
-      data,
-      layout: "fitColumns",
-      pagination: "local",
-      paginationSize: 10,
-      columns: [
-        { title: "ID", field: "id" },
-        { title: "Name", field: "name" },
-        { title: "Category", field: "category" },
-        { title: "Status", field: "status" },
-        { title: "Value", field: "value" },
-        { title: "Date", field: "date" },
-      ],
-    });
-
-    // Basic global search
-    const searchInput = document.getElementById("search");
-    searchInput.addEventListener("input", () => {
-      const query = searchInput.value.toLowerCase();
-      table.setFilter((row) => {
-        return Object.values(row).some((val) =>
-          String(val).toLowerCase().includes(query)
-        );
-      });
-    });
+    data = await res.json();
+    console.log("Data loaded:", data);
   } catch (err) {
-    console.error("Failed to load data:", err);
-    alert(
-      "Failed to load data. Check your data/data.json path and GitHub Pages settings."
-    );
+    console.error("Failed to fetch JSON:", err);
+    alert("Failed to load data. Check data/data.json path and GitHub Pages.");
+    return;
   }
+
+  // Initialize Tabulator table
+  const table = new Tabulator("#table", {
+    data: data,
+    layout: "fitColumns",
+    pagination: "local",
+    paginationSize: 10,
+    columns: [
+      { title: "ID", field: "id", sorter: "number" },
+      { title: "Name", field: "name", sorter: "string" },
+      { title: "Category", field: "category", sorter: "string" },
+      { title: "Status", field: "status", sorter: "string" },
+      { title: "Value", field: "value", sorter: "number" },
+      { title: "Date", field: "date", sorter: "date" },
+    ],
+  });
+
+  // Global search
+  const searchInput = document.getElementById("search");
+  searchInput.addEventListener("input", () => {
+    const query = searchInput.value.toLowerCase();
+    table.setFilter((row) => {
+      return Object.values(row).some((val) =>
+        String(val).toLowerCase().includes(query)
+      );
+    });
+  });
+
+  // Category filter
+  const categorySelect = document.getElementById("category");
+  categorySelect.addEventListener("change", () => {
+    const val = categorySelect.value;
+    table.setFilter(val ? "category" : "", val ? "=" : "", val);
+  });
+
+  // Status filter
+  const statusSelect = document.getElementById("status");
+  statusSelect.addEventListener("change", () => {
+    const val = statusSelect.value;
+    table.setFilter(val ? "status" : "", val ? "=" : "", val);
+  });
 }
 
 main();

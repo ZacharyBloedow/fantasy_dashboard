@@ -1,93 +1,30 @@
-:root {
-  --bg: #0b0e14;
-  --card: #121723;
-  --text: #e6e9ef;
-  --muted: #a0a7b4;
-  --acc: #7c9cff;
-  --border: #1c2433;
-}
-* {
-  box-sizing: border-box;
-}
 body {
+  font-family: Arial, sans-serif;
+  background-color: #121722;
+  color: #e6e9ef;
   margin: 0;
-  font-family: ui-sans-serif, system-ui, Segoe UI, Roboto, Helvetica, Arial;
-  background: linear-gradient(180deg, #0b0e14 0%, #0f1420 100%);
-  color: var(--text);
-}
-.wrap {
-  max-width: 1100px;
-  margin: 24px auto;
-  padding: 0 16px;
-}
-h1 {
-  margin: 0 0 4px;
-  font-size: 28px;
-}
-.sub {
-  color: var(--muted);
-  margin-top: 6px;
-}
-.card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-.controls .control-row {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr 0.6fr 0.6fr auto auto;
-  gap: 10px;
-}
-.controls input,
-.controls select,
-.controls button {
-  width: 100%;
-  padding: 10px 12px;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  background: #0e1420;
-  color: var(--text);
-}
-.controls button {
-  background: var(--acc);
-  color: #0b0e14;
-  border: none;
-  cursor: pointer;
-  font-weight: 600;
-}
-.controls button#clear {
-  background: #263049;
-  color: var(--text);
-}
-.controls select[multiple] {
-  height: 42px;
-}
-.foot {
-  color: var(--muted);
-  text-align: center;
-  margin-bottom: 32px;
+  padding: 20px;
 }
 
-/* Tabulator tweaks */
-.tabulator {
-  background: transparent;
-  border: 1px solid var(--border);
-  border-radius: 12px;
+header h1 {
+  margin: 0 0 20px 0;
 }
-.tabulator .tabulator-header {
-  background: #121826;
-  color: var(--text);
+
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
 }
-.tabulator .tabulator-row {
-  background: transparent;
-  color: var(--text);
+
+.controls input,
+.controls select {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #1c2433;
+  background-color: #0f1420;
+  color: #e6e9ef;
 }
-.tabulator .tabulator-row.tabulator-selectable:hover {
-  background: #101728;
-}
-.tabulator .tabulator-footer {
-  background: #121826;
-  color: var(--muted);
+
+#table {
+  background-color: #121722;
 }
