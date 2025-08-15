@@ -17,7 +17,6 @@ async function main() {
     pagination: "local",
     paginationSize: 10,
     columns: [
-      { title: "ID", field: "id", sorter: "number" },
       { title: "Name", field: "name", sorter: "string" },
       { title: "Category", field: "category", sorter: "string" },
       { title: "Status", field: "status", sorter: "string" },
