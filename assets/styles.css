@@ -1,30 +1,23 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #121722;
-  color: #e6e9ef;
-  margin: 0;
-  padding: 20px;
+  margin: 20px;
+  background: #f7f7f7;
 }
 
-header h1 {
-  margin: 0 0 20px 0;
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.controls {
+.filters {
+  margin-bottom: 10px;
   display: flex;
   gap: 10px;
-  margin-bottom: 15px;
+  flex-wrap: wrap;
 }
 
-.controls input,
-.controls select {
-  padding: 8px 10px;
-  border-radius: 6px;
-  border: 1px solid #1c2433;
-  background-color: #0f1420;
-  color: #e6e9ef;
-}
-
-#table {
-  background-color: #121722;
+.filters input,
+.filters select {
+  padding: 5px;
+  font-size: 14px;
 }

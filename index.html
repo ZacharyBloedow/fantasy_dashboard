@@ -2,54 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard</title>
-
-    <!-- Tabulator CSS -->
+    <title>Fantasy Football Dashboard</title>
     <link
-      href="https://unpkg.com/tabulator-tables@5.6.0/dist/css/tabulator.min.css"
+      href="https://unpkg.com/tabulator-tables@5.5.0/dist/css/tabulator.min.css"
       rel="stylesheet"
     />
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 20px;
-      }
-      #filters {
-        margin-bottom: 15px;
-      }
-      #filters input,
-      #filters select {
-        margin-right: 10px;
-        padding: 5px;
-      }
-      #table {
-        margin-top: 10px;
-      }
-    </style>
+    <link href="style.css" rel="stylesheet" />
   </head>
   <body>
-    <h1>Data Dashboard</h1>
+    <h1>Fantasy Football Keepers Dashboard</h1>
 
-    <div id="filters">
-      <input type="text" id="search" placeholder="Search..." />
-      <select id="category">
-        <option value="">All Categories</option>
-        <option value="Animal">Animal</option>
-        <option value="Plant">Plant</option>
-        <option value="Mineral">Mineral</option>
+    <div class="filters">
+      <input type="text" id="search" placeholder="Global search..." />
+      <select id="position">
+        <option value="">All Positions</option>
       </select>
-      <select id="status">
-        <option value="">All Statuses</option>
-        <option value="Active">Active</option>
-        <option value="Inactive">Inactive</option>
+      <select id="nfl_team">
+        <option value="">All NFL Teams</option>
+      </select>
+      <select id="fantasy_team">
+        <option value="">All Fantasy Teams</option>
       </select>
     </div>
 
     <div id="table"></div>
 
-    <!-- Tabulator JS -->
-    <script src="https://unpkg.com/tabulator-tables@5.6.0/dist/js/tabulator.min.js"></script>
+    <script src="https://unpkg.com/tabulator-tables@5.5.0/dist/js/tabulator.min.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
