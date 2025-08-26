@@ -2,32 +2,121 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Fantasy Football Dashboard</title>
-    <link
-      href="https://unpkg.com/tabulator-tables@5.5.0/dist/css/tabulator.min.css"
-      rel="stylesheet"
-    />
-    <link href="style.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fantasy Keepers Dashboard</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        cursor: pointer;
+        background-color: #f4f4f4;
+      }
+      tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+    </style>
   </head>
   <body>
-    <h1>Fantasy Football Keepers Dashboard</h1>
+    <h2>Fantasy Keepers Dashboard</h2>
+    <table id="keepersTable">
+      <thead>
+        <tr>
+          <th onclick="sortTable(0)">Fantasy Team</th>
+          <th onclick="sortTable(1)">Player</th>
+          <th onclick="sortTable(2)">NFL Team</th>
+          <th onclick="sortTable(3)">Position</th>
+          <th onclick="sortTable(4)">Keeper Round</th>
+          <th onclick="sortTable(5)">Keeper Pick</th>
+          <th onclick="sortTable(6)">Overall Pick</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
 
-    <div class="filters">
-      <input type="text" id="search" placeholder="Global search..." />
-      <select id="position">
-        <option value="">All Positions</option>
-      </select>
-      <select id="nfl_team">
-        <option value="">All NFL Teams</option>
-      </select>
-      <select id="fantasy_team">
-        <option value="">All Fantasy Teams</option>
-      </select>
-    </div>
+    <script>
+      async function loadData() {
+        try {
+          const response = await fetch("data.json");
+          const data = await response.json();
+          const tbody = document.querySelector("#keepersTable tbody");
+          tbody.innerHTML = "";
+          data.forEach((player) => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+        <td>${player.fantasy_team}</td>
+        <td>${player.name}</td>
+        <td>${player.status}</td>
+        <td>${player.category}</td>
+        <td>${player.keeper_round}</td>
+        <td>${player.keeper_pick}</td>
+        <td>${player.value}</td>
+      `;
+            tbody.appendChild(tr);
+          });
+        } catch (err) {
+          console.error("Error loading JSON:", err);
+        }
+      }
 
-    <div id="table"></div>
+      // Simple table sort by column
+      function sortTable(n) {
+        const table = document.getElementById("keepersTable");
+        let rows,
+          switching,
+          i,
+          x,
+          y,
+          shouldSwitch,
+          dir,
+          switchcount = 0;
+        switching = true;
+        dir = "asc";
+        while (switching) {
+          switching = false;
+          rows = table.rows;
+          for (i = 1; i < rows.length - 1; i++) {
+            shouldSwitch = false;
+            x = rows[i].getElementsByTagName("TD")[n];
+            y = rows[i + 1].getElementsByTagName("TD")[n];
+            if (dir == "asc") {
+              if (x.innerText.toLowerCase() > y.innerText.toLowerCase()) {
+                shouldSwitch = true;
+                break;
+              }
+            } else if (dir == "desc") {
+              if (x.innerText.toLowerCase() < y.innerText.toLowerCase()) {
+                shouldSwitch = true;
+                break;
+              }
+            }
+          }
+          if (shouldSwitch) {
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            switching = true;
+            switchcount++;
+          } else {
+            if (switchcount == 0 && dir == "asc") {
+              dir = "desc";
+              switching = true;
+            }
+          }
+        }
+      }
 
-    <script src="https://unpkg.com/tabulator-tables@5.5.0/dist/js/tabulator.min.js"></script>
-    <script src="app.js"></script>
+      // Load data on page load
+      window.addEventListener("DOMContentLoaded", loadData);
+    </script>
   </body>
 </html>
