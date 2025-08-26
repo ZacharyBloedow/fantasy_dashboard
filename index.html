@@ -2,121 +2,61 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fantasy Keepers Dashboard</title>
+    <!-- Tabulator CSS -->
+    <link
+      href="https://unpkg.com/tabulator-tables@5.5.1/dist/css/tabulator.min.css"
+      rel="stylesheet"
+    />
     <style>
       body {
         font-family: Arial, sans-serif;
         margin: 20px;
       }
-      table {
-        border-collapse: collapse;
-        width: 100%;
+      h1 {
+        text-align: center;
       }
-      th,
-      td {
-        border: 1px solid #ddd;
-        padding: 8px;
-        text-align: left;
-      }
-      th {
-        cursor: pointer;
-        background-color: #f4f4f4;
-      }
-      tr:nth-child(even) {
-        background-color: #f9f9f9;
+      #keepers-table {
+        margin-top: 20px;
       }
     </style>
   </head>
   <body>
-    <h2>Fantasy Keepers Dashboard</h2>
-    <table id="keepersTable">
-      <thead>
-        <tr>
-          <th onclick="sortTable(0)">Fantasy Team</th>
-          <th onclick="sortTable(1)">Player</th>
-          <th onclick="sortTable(2)">NFL Team</th>
-          <th onclick="sortTable(3)">Position</th>
-          <th onclick="sortTable(4)">Keeper Round</th>
-          <th onclick="sortTable(5)">Keeper Pick</th>
-          <th onclick="sortTable(6)">Overall Pick</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
+    <h1>Fantasy Keepers Dashboard</h1>
+    <div id="keepers-table"></div>
 
+    <!-- Tabulator JS -->
+    <script src="https://unpkg.com/tabulator-tables@5.5.1/dist/js/tabulator.min.js"></script>
     <script>
-      async function loadData() {
-        try {
-          const response = await fetch("data.json");
-          const data = await response.json();
-          const tbody = document.querySelector("#keepersTable tbody");
-          tbody.innerHTML = "";
-          data.forEach((player) => {
-            const tr = document.createElement("tr");
-            tr.innerHTML = `
-        <td>${player.fantasy_team}</td>
-        <td>${player.name}</td>
-        <td>${player.status}</td>
-        <td>${player.category}</td>
-        <td>${player.keeper_round}</td>
-        <td>${player.keeper_pick}</td>
-        <td>${player.value}</td>
-      `;
-            tbody.appendChild(tr);
-          });
-        } catch (err) {
-          console.error("Error loading JSON:", err);
-        }
-      }
+      // Create the table
+      const table = new Tabulator("#keepers-table", {
+        layout: "fitColumns",
+        pagination: "local",
+        paginationSize: 25,
+        placeholder: "Loading data...",
+        columns: [
+          { title: "Player", field: "name", sorter: "string" },
+          { title: "Position", field: "category", sorter: "string" },
+          { title: "NFL Team", field: "status", sorter: "string" },
+          { title: "Fantasy Team", field: "fantasy_team", sorter: "string" },
+          { title: "Keeper Round", field: "keeper_round", sorter: "number" },
+          { title: "Overall Pick", field: "value", sorter: "number" },
+        ],
+      });
 
-      // Simple table sort by column
-      function sortTable(n) {
-        const table = document.getElementById("keepersTable");
-        let rows,
-          switching,
-          i,
-          x,
-          y,
-          shouldSwitch,
-          dir,
-          switchcount = 0;
-        switching = true;
-        dir = "asc";
-        while (switching) {
-          switching = false;
-          rows = table.rows;
-          for (i = 1; i < rows.length - 1; i++) {
-            shouldSwitch = false;
-            x = rows[i].getElementsByTagName("TD")[n];
-            y = rows[i + 1].getElementsByTagName("TD")[n];
-            if (dir == "asc") {
-              if (x.innerText.toLowerCase() > y.innerText.toLowerCase()) {
-                shouldSwitch = true;
-                break;
-              }
-            } else if (dir == "desc") {
-              if (x.innerText.toLowerCase() < y.innerText.toLowerCase()) {
-                shouldSwitch = true;
-                break;
-              }
-            }
-          }
-          if (shouldSwitch) {
-            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-            switching = true;
-            switchcount++;
-          } else {
-            if (switchcount == 0 && dir == "asc") {
-              dir = "desc";
-              switching = true;
-            }
-          }
-        }
-      }
-
-      // Load data on page load
-      window.addEventListener("DOMContentLoaded", loadData);
+      // Load data.json
+      fetch("data.json")
+        .then((response) => {
+          if (!response.ok) throw new Error("Failed to fetch data.json");
+          return response.json();
+        })
+        .then((data) => {
+          table.setData(data);
+        })
+        .catch((err) => {
+          console.error(err);
+          table.replaceData([]); // show empty table
+        });
     </script>
   </body>
 </html>
