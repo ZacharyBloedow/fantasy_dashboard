@@ -1,30 +1,722 @@
 [
   {
-    "name": "FPGA bring-up",
-    "category": "Hardware",
-    "status": "In Progress",
+    "name": "Josh Allen",
+    "category": "QB",
+    "status": "Buf",
+    "value": 18,
+    "date": "2025-08-02",
+    "fantasy_team": "Josh AllenBufQB",
+    "keeper_round": 2,
+    "keeper_pick": 6
+  },
+  {
+    "name": "James Cook",
+    "category": "RB",
+    "status": "Buf",
+    "value": 31,
+    "date": "2025-08-03",
+    "fantasy_team": "James CookBufRB",
+    "keeper_round": 3,
+    "keeper_pick": 7
+  },
+  {
+    "name": "Deebo Samuel",
+    "category": "WR",
+    "status": "Wsh",
     "value": 42,
-    "date": "2025-08-10"
+    "date": "2025-08-04",
+    "fantasy_team": "Deebo SamuelWshWR",
+    "keeper_round": 4,
+    "keeper_pick": 6
   },
   {
-    "name": "API gateway",
-    "category": "Software",
-    "status": "Open",
-    "value": 15,
-    "date": "2025-08-08"
+    "name": "Trey McBride",
+    "category": "TE",
+    "status": "Ari",
+    "value": 66,
+    "date": "2025-08-06",
+    "fantasy_team": "Trey McBrideAriTE",
+    "keeper_round": 6,
+    "keeper_pick": 6
   },
   {
-    "name": "DB migration",
-    "category": "Ops",
-    "status": "Blocked",
-    "value": 70,
-    "date": "2025-08-06"
+    "name": "De'Von Achane",
+    "category": "RB",
+    "status": "Mia",
+    "value": 55,
+    "date": "2025-08-05",
+    "fantasy_team": "De'Von AchaneMiaRBQ",
+    "keeper_round": 5,
+    "keeper_pick": 7
   },
   {
-    "name": "Telemetry parser",
-    "category": "Software",
-    "status": "Done",
+    "name": "Isiah Pacheco",
+    "category": "RB",
+    "status": "KC",
+    "value": 79,
+    "date": "2025-08-07",
+    "fantasy_team": "Isiah PachecoKCRB",
+    "keeper_round": 7,
+    "keeper_pick": 7
+  },
+  {
+    "name": "Baker Mayfield",
+    "category": "QB",
+    "status": "TB",
+    "value": 173,
+    "date": "2025-08-15",
+    "fantasy_team": "Baker MayfieldTBQB",
+    "keeper_round": 15,
+    "keeper_pick": 5
+  },
+  {
+    "name": "Tyreek Hill",
+    "category": "WR",
+    "status": "Mia",
+    "value": 20,
+    "date": "2025-08-02",
+    "fantasy_team": "Tyreek HillMiaWRQ",
+    "keeper_round": 2,
+    "keeper_pick": 8
+  },
+  {
+    "name": "Amon-Ra St. Brown",
+    "category": "WR",
+    "status": "Det",
     "value": 5,
-    "date": "2025-07-31"
+    "date": "2025-08-01",
+    "fantasy_team": "Amon-Ra St. BrownDetWR",
+    "keeper_round": 1,
+    "keeper_pick": 5
+  },
+  {
+    "name": "Chase Brown",
+    "category": "RB",
+    "status": "Cin",
+    "value": 116,
+    "date": "2025-08-10",
+    "fantasy_team": "Chase BrownCinRB",
+    "keeper_round": 10,
+    "keeper_pick": 8
+  },
+  {
+    "name": "Zay Flowers",
+    "category": "WR",
+    "status": "Bal",
+    "value": 53,
+    "date": "2025-08-05",
+    "fantasy_team": "Zay FlowersBalWR",
+    "keeper_round": 5,
+    "keeper_pick": 5
+  },
+  {
+    "name": "Tony Pollard",
+    "category": "RB",
+    "status": "Ten",
+    "value": 44,
+    "date": "2025-08-04",
+    "fantasy_team": "Tony PollardTenRB",
+    "keeper_round": 4,
+    "keeper_pick": 8
+  },
+  {
+    "name": "Jahmyr Gibbs",
+    "category": "RB",
+    "status": "Det",
+    "value": 37,
+    "date": "2025-08-04",
+    "fantasy_team": "Jahmyr GibbsDetRB",
+    "keeper_round": 4,
+    "keeper_pick": 1
+  },
+  {
+    "name": "Puka Nacua",
+    "category": "WR",
+    "status": "LAR",
+    "value": 36,
+    "date": "2025-08-03",
+    "fantasy_team": "Puka NacuaLARWR",
+    "keeper_round": 3,
+    "keeper_pick": 12
+  },
+  {
+    "name": "Malik Nabers",
+    "category": "WR",
+    "status": "NYG",
+    "value": 60,
+    "date": "2025-08-05",
+    "fantasy_team": "Malik NabersNYGWRQ",
+    "keeper_round": 5,
+    "keeper_pick": 12
+  },
+  {
+    "name": "Garrett Wilson",
+    "category": "WR",
+    "status": "NYJ",
+    "value": 13,
+    "date": "2025-08-02",
+    "fantasy_team": "Garrett WilsonNYJWR",
+    "keeper_round": 2,
+    "keeper_pick": 1
+  },
+  {
+    "name": "Justin Jefferson",
+    "category": "WR",
+    "status": "Min",
+    "value": 12,
+    "date": "2025-08-01",
+    "fantasy_team": "Justin JeffersonMinWRQ",
+    "keeper_round": 1,
+    "keeper_pick": 12
+  },
+  {
+    "name": "Jayden Daniels",
+    "category": "QB",
+    "status": "Wsh",
+    "value": 108,
+    "date": "2025-08-09",
+    "fantasy_team": "Jayden DanielsWshQB",
+    "keeper_round": 9,
+    "keeper_pick": 12
+  },
+  {
+    "name": "George Pickens",
+    "category": "WR",
+    "status": "Dal",
+    "value": 69,
+    "date": "2025-08-06",
+    "fantasy_team": "George PickensDalWR",
+    "keeper_round": 6,
+    "keeper_pick": 9
+  },
+  {
+    "name": "Mike Evans",
+    "category": "WR",
+    "status": "TB",
+    "value": 45,
+    "date": "2025-08-04",
+    "fantasy_team": "Mike EvansTBWR",
+    "keeper_round": 4,
+    "keeper_pick": 9
+  },
+  {
+    "name": "Jalen Hurts",
+    "category": "QB",
+    "status": "Phi",
+    "value": 28,
+    "date": "2025-08-03",
+    "fantasy_team": "Jalen HurtsPhiQB",
+    "keeper_round": 3,
+    "keeper_pick": 4
+  },
+  {
+    "name": "Sam LaPorta",
+    "category": "TE",
+    "status": "Det",
+    "value": 52,
+    "date": "2025-08-05",
+    "fantasy_team": "Sam LaPortaDetTE",
+    "keeper_round": 5,
+    "keeper_pick": 4
+  },
+  {
+    "name": "CeeDee Lamb",
+    "category": "WR",
+    "status": "Dal",
+    "value": 4,
+    "date": "2025-08-01",
+    "fantasy_team": "CeeDee LambDalWR",
+    "keeper_round": 1,
+    "keeper_pick": 4
+  },
+  {
+    "name": "Jonathan Taylor",
+    "category": "RB",
+    "status": "Ind",
+    "value": 21,
+    "date": "2025-08-02",
+    "fantasy_team": "Jonathan TaylorIndRB",
+    "keeper_round": 2,
+    "keeper_pick": 9
+  },
+  {
+    "name": "Kyren Williams",
+    "category": "RB",
+    "status": "LAR",
+    "value": 22,
+    "date": "2025-08-02",
+    "fantasy_team": "Kyren WilliamsLARRB",
+    "keeper_round": 2,
+    "keeper_pick": 10
+  },
+  {
+    "name": "Keon Coleman",
+    "category": "WR",
+    "status": "Buf",
+    "value": 99,
+    "date": "2025-08-09",
+    "fantasy_team": "Keon ColemanBufWR",
+    "keeper_round": 9,
+    "keeper_pick": 3
+  },
+  {
+    "name": "Calvin Ridley",
+    "category": "WR",
+    "status": "Ten",
+    "value": 75,
+    "date": "2025-08-07",
+    "fantasy_team": "Calvin RidleyTenWRQ",
+    "keeper_round": 7,
+    "keeper_pick": 3
+  },
+  {
+    "name": "Chris Godwin",
+    "category": "WR",
+    "status": "TB",
+    "value": 70,
+    "date": "2025-08-06",
+    "fantasy_team": "Chris GodwinTBWRO",
+    "keeper_round": 6,
+    "keeper_pick": 10
+  },
+  {
+    "name": "Alvin Kamara",
+    "category": "RB",
+    "status": "NO",
+    "value": 27,
+    "date": "2025-08-03",
+    "fantasy_team": "Alvin KamaraNORB",
+    "keeper_round": 3,
+    "keeper_pick": 3
+  },
+  {
+    "name": "Cooper Kupp",
+    "category": "WR",
+    "status": "Sea",
+    "value": 46,
+    "date": "2025-08-04",
+    "fantasy_team": "Cooper KuppSeaWR",
+    "keeper_round": 4,
+    "keeper_pick": 10
+  },
+  {
+    "name": "Jaylen Waddle",
+    "category": "WR",
+    "status": "Mia",
+    "value": 58,
+    "date": "2025-08-05",
+    "fantasy_team": "Jaylen WaddleMiaWR",
+    "keeper_round": 5,
+    "keeper_pick": 10
+  },
+  {
+    "name": "Ja'Marr Chase",
+    "category": "WR",
+    "status": "Cin",
+    "value": 10,
+    "date": "2025-08-01",
+    "fantasy_team": "Ja'Marr ChaseCinWR",
+    "keeper_round": 1,
+    "keeper_pick": 10
+  },
+  {
+    "name": "Brian Thomas Jr.",
+    "category": "WR",
+    "status": "Jax",
+    "value": 111,
+    "date": "2025-08-10",
+    "fantasy_team": "Brian Thomas Jr.JaxWR",
+    "keeper_round": 10,
+    "keeper_pick": 3
+  },
+  {
+    "name": "Marvin Harrison Jr.",
+    "category": "WR",
+    "status": "Ari",
+    "value": 15,
+    "date": "2025-08-02",
+    "fantasy_team": "Marvin Harrison Jr.AriWR",
+    "keeper_round": 2,
+    "keeper_pick": 3
+  },
+  {
+    "name": "Rashee Rice",
+    "category": "WR",
+    "status": "KC",
+    "value": 63,
+    "date": "2025-08-06",
+    "fantasy_team": "Rashee RiceKCWR",
+    "keeper_round": 6,
+    "keeper_pick": 3
+  },
+  {
+    "name": "Kenneth Walker III",
+    "category": "RB",
+    "status": "Sea",
+    "value": 39,
+    "date": "2025-08-04",
+    "fantasy_team": "Kenneth Walker IIISeaRB",
+    "keeper_round": 4,
+    "keeper_pick": 3
+  },
+  {
+    "name": "Bo Nix",
+    "category": "QB",
+    "status": "Den",
+    "value": 169,
+    "date": "2025-08-15",
+    "fantasy_team": "Bo NixDenQB",
+    "keeper_round": 15,
+    "keeper_pick": 1
+  },
+  {
+    "name": "Brian Robinson Jr.",
+    "category": "RB",
+    "status": "SF",
+    "value": 73,
+    "date": "2025-08-07",
+    "fantasy_team": "Brian Robinson Jr.SFRB",
+    "keeper_round": 7,
+    "keeper_pick": 1
+  },
+  {
+    "name": "James Conner",
+    "category": "RB",
+    "status": "Ari",
+    "value": 72,
+    "date": "2025-08-06",
+    "fantasy_team": "James ConnerAriRB",
+    "keeper_round": 6,
+    "keeper_pick": 12
+  },
+  {
+    "name": "Tee Higgins",
+    "category": "WR",
+    "status": "Cin",
+    "value": 49,
+    "date": "2025-08-05",
+    "fantasy_team": "Tee HigginsCinWR",
+    "keeper_round": 5,
+    "keeper_pick": 1
+  },
+  {
+    "name": "Jakobi Meyers",
+    "category": "WR",
+    "status": "LV",
+    "value": 120,
+    "date": "2025-08-10",
+    "fantasy_team": "Jakobi MeyersLVWR",
+    "keeper_round": 10,
+    "keeper_pick": 12
+  },
+  {
+    "name": "DK Metcalf",
+    "category": "WR",
+    "status": "Pit",
+    "value": 48,
+    "date": "2025-08-04",
+    "fantasy_team": "DK MetcalfPitWR",
+    "keeper_round": 4,
+    "keeper_pick": 12
+  },
+  {
+    "name": "Xavier Worthy",
+    "category": "WR",
+    "status": "KC",
+    "value": 88,
+    "date": "2025-08-08",
+    "fantasy_team": "Xavier WorthyKCWR",
+    "keeper_round": 8,
+    "keeper_pick": 4
+  },
+  {
+    "name": "Terry McLaurin",
+    "category": "WR",
+    "status": "Wsh",
+    "value": 81,
+    "date": "2025-08-07",
+    "fantasy_team": "Terry McLaurinWshWR",
+    "keeper_round": 7,
+    "keeper_pick": 9
+  },
+  {
+    "name": "Bucky Irving",
+    "category": "RB",
+    "status": "TB",
+    "value": 177,
+    "date": "2025-08-15",
+    "fantasy_team": "Bucky IrvingTBRB",
+    "keeper_round": 15,
+    "keeper_pick": 9
+  },
+  {
+    "name": "Caleb Williams",
+    "category": "QB",
+    "status": "Chi",
+    "value": 112,
+    "date": "2025-08-10",
+    "fantasy_team": "Caleb WilliamsChiQB",
+    "keeper_round": 10,
+    "keeper_pick": 4
+  },
+  {
+    "name": "George Kittle",
+    "category": "TE",
+    "status": "SF",
+    "value": 57,
+    "date": "2025-08-05",
+    "fantasy_team": "George KittleSFTE",
+    "keeper_round": 5,
+    "keeper_pick": 9
+  },
+  {
+    "name": "Nico Collins",
+    "category": "WR",
+    "status": "Hou",
+    "value": 33,
+    "date": "2025-08-03",
+    "fantasy_team": "Nico CollinsHouWR",
+    "keeper_round": 3,
+    "keeper_pick": 9
+  },
+  {
+    "name": "Jerry Jeudy",
+    "category": "WR",
+    "status": "Cle",
+    "value": 143,
+    "date": "2025-08-12",
+    "fantasy_team": "Jerry JeudyCleWR",
+    "keeper_round": 12,
+    "keeper_pick": 11
+  },
+  {
+    "name": "Josh Jacobs",
+    "category": "RB",
+    "status": "GB",
+    "value": 26,
+    "date": "2025-08-03",
+    "fantasy_team": "Josh JacobsGBRB",
+    "keeper_round": 3,
+    "keeper_pick": 2
+  },
+  {
+    "name": "T.J. Hockenson",
+    "category": "TE",
+    "status": "Min",
+    "value": 122,
+    "date": "2025-08-11",
+    "fantasy_team": "T.J. HockensonMinTE",
+    "keeper_round": 11,
+    "keeper_pick": 2
+  },
+  {
+    "name": "David Njoku",
+    "category": "TE",
+    "status": "Cle",
+    "value": 98,
+    "date": "2025-08-09",
+    "fantasy_team": "David NjokuCleTE",
+    "keeper_round": 9,
+    "keeper_pick": 2
+  },
+  {
+    "name": "Jaxon Smith-Njigba",
+    "category": "WR",
+    "status": "Sea",
+    "value": 95,
+    "date": "2025-08-08",
+    "fantasy_team": "Jaxon Smith-NjigbaSeaWR",
+    "keeper_round": 8,
+    "keeper_pick": 11
+  },
+  {
+    "name": "Joe Mixon",
+    "category": "RB",
+    "status": "Hou",
+    "value": 47,
+    "date": "2025-08-04",
+    "fantasy_team": "Joe MixonHouRBO",
+    "keeper_round": 4,
+    "keeper_pick": 11
+  },
+  {
+    "name": "Rome Odunze",
+    "category": "WR",
+    "status": "Chi",
+    "value": 104,
+    "date": "2025-08-09",
+    "fantasy_team": "Rome OdunzeChiWR",
+    "keeper_round": 9,
+    "keeper_pick": 8
+  },
+  {
+    "name": "DJ Moore",
+    "category": "WR",
+    "status": "Chi",
+    "value": 41,
+    "date": "2025-08-04",
+    "fantasy_team": "DJ MooreChiWR",
+    "keeper_round": 4,
+    "keeper_pick": 5
+  },
+  {
+    "name": "Drake London",
+    "category": "WR",
+    "status": "Atl",
+    "value": 32,
+    "date": "2025-08-03",
+    "fantasy_team": "Drake LondonAtlWR",
+    "keeper_round": 3,
+    "keeper_pick": 8
+  },
+  {
+    "name": "Derrick Henry",
+    "category": "RB",
+    "status": "Bal",
+    "value": 17,
+    "date": "2025-08-02",
+    "fantasy_team": "Derrick HenryBalRB",
+    "keeper_round": 2,
+    "keeper_pick": 5
+  },
+  {
+    "name": "Brock Bowers",
+    "category": "TE",
+    "status": "LV",
+    "value": 113,
+    "date": "2025-08-10",
+    "fantasy_team": "Brock BowersLVTE",
+    "keeper_round": 10,
+    "keeper_pick": 5
+  },
+  {
+    "name": "David Montgomery",
+    "category": "RB",
+    "status": "Det",
+    "value": 65,
+    "date": "2025-08-06",
+    "fantasy_team": "David MontgomeryDetRB",
+    "keeper_round": 6,
+    "keeper_pick": 5
+  },
+  {
+    "name": "A.J. Brown",
+    "category": "WR",
+    "status": "Phi",
+    "value": 30,
+    "date": "2025-08-03",
+    "fantasy_team": "A.J. BrownPhiWRQ",
+    "keeper_round": 3,
+    "keeper_pick": 6
+  },
+  {
+    "name": "Bijan Robinson",
+    "category": "RB",
+    "status": "Atl",
+    "value": 6,
+    "date": "2025-08-01",
+    "fantasy_team": "Bijan RobinsonAtlRB",
+    "keeper_round": 1,
+    "keeper_pick": 6
+  },
+  {
+    "name": "Breece Hall",
+    "category": "RB",
+    "status": "NYJ",
+    "value": 19,
+    "date": "2025-08-02",
+    "fantasy_team": "Breece HallNYJRB",
+    "keeper_round": 2,
+    "keeper_pick": 7
+  },
+  {
+    "name": "Chuba Hubbard",
+    "category": "RB",
+    "status": "Car",
+    "value": 139,
+    "date": "2025-08-12",
+    "fantasy_team": "Chuba HubbardCarRB",
+    "keeper_round": 12,
+    "keeper_pick": 7
+  },
+  {
+    "name": "Joe Burrow",
+    "category": "QB",
+    "status": "Cin",
+    "value": 54,
+    "date": "2025-08-05",
+    "fantasy_team": "Joe BurrowCinQB",
+    "keeper_round": 5,
+    "keeper_pick": 6
+  },
+  {
+    "name": "Ladd McConkey",
+    "category": "WR",
+    "status": "LAC",
+    "value": 115,
+    "date": "2025-08-10",
+    "fantasy_team": "Ladd McConkeyLACWR",
+    "keeper_round": 10,
+    "keeper_pick": 7
+  },
+  {
+    "name": "Courtland Sutton",
+    "category": "WR",
+    "status": "Den",
+    "value": 86,
+    "date": "2025-08-08",
+    "fantasy_team": "Courtland SuttonDenWR",
+    "keeper_round": 8,
+    "keeper_pick": 2
+  },
+  {
+    "name": "Saquon Barkley",
+    "category": "RB",
+    "status": "Phi",
+    "value": 11,
+    "date": "2025-08-01",
+    "fantasy_team": "Saquon BarkleyPhiRB",
+    "keeper_round": 1,
+    "keeper_pick": 11
+  },
+  {
+    "name": "DeVonta Smith",
+    "category": "WR",
+    "status": "Phi",
+    "value": 38,
+    "date": "2025-08-04",
+    "fantasy_team": "DeVonta SmithPhiWRQ",
+    "keeper_round": 4,
+    "keeper_pick": 2
+  },
+  {
+    "name": "Jameson Williams",
+    "category": "WR",
+    "status": "Det",
+    "value": 134,
+    "date": "2025-08-12",
+    "fantasy_team": "Jameson WilliamsDetWR",
+    "keeper_round": 12,
+    "keeper_pick": 2
+  },
+  {
+    "name": "Lamar Jackson",
+    "category": "QB",
+    "status": "Bal",
+    "value": 35,
+    "date": "2025-08-03",
+    "fantasy_team": "Lamar JacksonBalQBQ",
+    "keeper_round": 3,
+    "keeper_pick": 11
+  },
+  {
+    "name": "D'Andre Swift",
+    "category": "RB",
+    "status": "Chi",
+    "value": 59,
+    "date": "2025-08-05",
+    "fantasy_team": "D'Andre SwiftChiRB",
+    "keeper_round": 5,
+    "keeper_pick": 11
   }
 ]

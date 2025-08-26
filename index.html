@@ -5,45 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
 
-    <!-- Tabulator CSS (updated to 6.3.1) -->
+    <!-- Tabulator CSS -->
     <link
-      href="https://unpkg.com/tabulator-tables@6.3.1/dist/css/tabulator.min.css"
+      href="https://unpkg.com/tabulator-tables@5.6.0/dist/css/tabulator.min.css"
       rel="stylesheet"
     />
-
-    <!-- Your CSS -->
-    <link rel="stylesheet" href="assets/styles.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      #filters {
+        margin-bottom: 15px;
+      }
+      #filters input,
+      #filters select {
+        margin-right: 10px;
+        padding: 5px;
+      }
+      #table {
+        margin-top: 10px;
+      }
+    </style>
   </head>
   <body>
-    <header>
-      <h1>Dashboard</h1>
-    </header>
+    <h1>Data Dashboard</h1>
 
-    <section class="controls">
-      <input id="search" placeholder="Global search" />
+    <div id="filters">
+      <input type="text" id="search" placeholder="Search..." />
       <select id="category">
-        <option value="">All categories</option>
-        <option>Hardware</option>
-        <option>Software</option>
-        <option>Ops</option>
+        <option value="">All Categories</option>
+        <option value="Animal">Animal</option>
+        <option value="Plant">Plant</option>
+        <option value="Mineral">Mineral</option>
       </select>
       <select id="status">
-        <option value="">All status</option>
-        <option>Open</option>
-        <option>In Progress</option>
-        <option>Blocked</option>
-        <option>Done</option>
+        <option value="">All Statuses</option>
+        <option value="Active">Active</option>
+        <option value="Inactive">Inactive</option>
       </select>
-    </section>
+    </div>
 
-    <section>
-      <div id="table"></div>
-    </section>
+    <div id="table"></div>
 
-    <!-- Tabulator JS (updated to 6.3.1) -->
-    <script src="https://unpkg.com/tabulator-tables@6.3.1/dist/js/tabulator.min.js"></script>
-
-    <!-- Your JS -->
-    <script src="js/app.js"></script>
+    <!-- Tabulator JS -->
+    <script src="https://unpkg.com/tabulator-tables@5.6.0/dist/js/tabulator.min.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>

@@ -17,6 +17,7 @@ async function main() {
     pagination: "local",
     paginationSize: 10,
     columns: [
+      { title: "ID", field: "id", visible: false }, // Hides ID column
       { title: "Name", field: "name", sorter: "string" },
       { title: "Category", field: "category", sorter: "string" },
       { title: "Status", field: "status", sorter: "string" },
@@ -30,7 +31,7 @@ async function main() {
   searchInput.addEventListener("input", () => {
     const query = searchInput.value.toLowerCase();
     table.setFilter((row) => {
-      return Object.values(row).some((val) =>
+      return Object.values(row.getData()).some((val) =>
         String(val).toLowerCase().includes(query)
       );
     });
