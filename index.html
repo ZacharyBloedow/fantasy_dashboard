@@ -2,10 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Fantasy Keepers Dashboard</title>
-    <!-- Tabulator CSS -->
+    <title>Fantasy Dashboard</title>
     <link
-      href="https://unpkg.com/tabulator-tables@5.5.1/dist/css/tabulator.min.css"
+      href="https://unpkg.com/tabulator-tables@5.5.0/dist/css/tabulator.min.css"
       rel="stylesheet"
     />
     <style>
@@ -13,50 +12,61 @@
         font-family: Arial, sans-serif;
         margin: 20px;
       }
-      h1 {
-        text-align: center;
-      }
-      #keepers-table {
+      #fantasy-table {
         margin-top: 20px;
       }
     </style>
   </head>
   <body>
-    <h1>Fantasy Keepers Dashboard</h1>
-    <div id="keepers-table"></div>
+    <h1>Fantasy Dashboard</h1>
+    <div id="fantasy-table"></div>
 
-    <!-- Tabulator JS -->
-    <script src="https://unpkg.com/tabulator-tables@5.5.1/dist/js/tabulator.min.js"></script>
+    <script src="https://unpkg.com/tabulator-tables@5.5.0/dist/js/tabulator.min.js"></script>
     <script>
-      // Create the table
-      const table = new Tabulator("#keepers-table", {
+      // Create Tabulator table
+      let table = new Tabulator("#fantasy-table", {
         layout: "fitColumns",
-        pagination: "local",
-        paginationSize: 25,
-        placeholder: "Loading data...",
+        placeholder: "No data available",
         columns: [
-          { title: "Player", field: "name", sorter: "string" },
-          { title: "Position", field: "category", sorter: "string" },
-          { title: "NFL Team", field: "status", sorter: "string" },
-          { title: "Fantasy Team", field: "fantasy_team", sorter: "string" },
-          { title: "Keeper Round", field: "keeper_round", sorter: "number" },
-          { title: "Overall Pick", field: "value", sorter: "number" },
+          { title: "Player", field: "name", headerFilter: "input" },
+          {
+            title: "Position",
+            field: "category",
+            headerFilter: "select",
+            headerFilterParams: { values: true },
+          },
+          {
+            title: "NFL Team",
+            field: "status",
+            headerFilter: "select",
+            headerFilterParams: { values: true },
+          },
+          {
+            title: "Fantasy Team",
+            field: "fantasy_team",
+            headerFilter: "select",
+            headerFilterParams: { values: true },
+          },
+          {
+            title: "Keeper Round",
+            field: "keeper_round",
+            headerFilter: "select",
+            headerFilterParams: { values: true },
+          },
+          { title: "Keeper Pick", field: "keeper_pick" },
+          { title: "Overall Pick", field: "value" },
         ],
       });
 
-      // Load data.json
+      // Fetch JSON data from the data folder
       fetch("data/data.json")
         .then((response) => {
-          if (!response.ok) throw new Error("Failed to fetch data.json");
+          if (!response.ok)
+            throw new Error(`HTTP error! status: ${response.status}`);
           return response.json();
         })
-        .then((data) => {
-          table.setData(data);
-        })
-        .catch((err) => {
-          console.error(err);
-          table.replaceData([]); // show empty table
-        });
+        .then((data) => table.setData(data))
+        .catch((err) => console.error("Failed to fetch data.json:", err));
     </script>
   </body>
 </html>
