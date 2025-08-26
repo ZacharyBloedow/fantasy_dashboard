@@ -5,7 +5,7 @@
     "status": "Buf",
     "value": 18,
     "date": "2025-08-02",
-    "fantasy_team": "Josh AllenBufQB",
+    "fantasy_team": "Team 1",
     "keeper_round": 2,
     "keeper_pick": 6
   },
@@ -15,7 +15,7 @@
     "status": "Buf",
     "value": 31,
     "date": "2025-08-03",
-    "fantasy_team": "James CookBufRB",
+    "fantasy_team": "Team 1",
     "keeper_round": 3,
     "keeper_pick": 7
   },
@@ -25,7 +25,7 @@
     "status": "Wsh",
     "value": 42,
     "date": "2025-08-04",
-    "fantasy_team": "Deebo SamuelWshWR",
+    "fantasy_team": "Team 1",
     "keeper_round": 4,
     "keeper_pick": 6
   },
@@ -35,7 +35,7 @@
     "status": "Ari",
     "value": 66,
     "date": "2025-08-06",
-    "fantasy_team": "Trey McBrideAriTE",
+    "fantasy_team": "Team 1",
     "keeper_round": 6,
     "keeper_pick": 6
   },
@@ -45,7 +45,7 @@
     "status": "Mia",
     "value": 55,
     "date": "2025-08-05",
-    "fantasy_team": "De'Von AchaneMiaRBQ",
+    "fantasy_team": "Team 1",
     "keeper_round": 5,
     "keeper_pick": 7
   },
@@ -55,7 +55,7 @@
     "status": "KC",
     "value": 79,
     "date": "2025-08-07",
-    "fantasy_team": "Isiah PachecoKCRB",
+    "fantasy_team": "Team 1",
     "keeper_round": 7,
     "keeper_pick": 7
   },
@@ -65,7 +65,7 @@
     "status": "TB",
     "value": 173,
     "date": "2025-08-15",
-    "fantasy_team": "Baker MayfieldTBQB",
+    "fantasy_team": "Team 2",
     "keeper_round": 15,
     "keeper_pick": 5
   },
@@ -75,7 +75,7 @@
     "status": "Mia",
     "value": 20,
     "date": "2025-08-02",
-    "fantasy_team": "Tyreek HillMiaWRQ",
+    "fantasy_team": "Team 2",
     "keeper_round": 2,
     "keeper_pick": 8
   },
@@ -85,7 +85,7 @@
     "status": "Det",
     "value": 5,
     "date": "2025-08-01",
-    "fantasy_team": "Amon-Ra St. BrownDetWR",
+    "fantasy_team": "Team 2",
     "keeper_round": 1,
     "keeper_pick": 5
   },
@@ -95,7 +95,7 @@
     "status": "Cin",
     "value": 116,
     "date": "2025-08-10",
-    "fantasy_team": "Chase BrownCinRB",
+    "fantasy_team": "Team 2",
     "keeper_round": 10,
     "keeper_pick": 8
   },
@@ -105,7 +105,7 @@
     "status": "Bal",
     "value": 53,
     "date": "2025-08-05",
-    "fantasy_team": "Zay FlowersBalWR",
+    "fantasy_team": "Team 2",
     "keeper_round": 5,
     "keeper_pick": 5
   },
@@ -115,7 +115,7 @@
     "status": "Ten",
     "value": 44,
     "date": "2025-08-04",
-    "fantasy_team": "Tony PollardTenRB",
+    "fantasy_team": "Team 2",
     "keeper_round": 4,
     "keeper_pick": 8
   },
@@ -125,7 +125,7 @@
     "status": "Det",
     "value": 37,
     "date": "2025-08-04",
-    "fantasy_team": "Jahmyr GibbsDetRB",
+    "fantasy_team": "Team 3",
     "keeper_round": 4,
     "keeper_pick": 1
   },
@@ -135,7 +135,7 @@
     "status": "LAR",
     "value": 36,
     "date": "2025-08-03",
-    "fantasy_team": "Puka NacuaLARWR",
+    "fantasy_team": "Team 3",
     "keeper_round": 3,
     "keeper_pick": 12
   },
@@ -145,7 +145,7 @@
     "status": "NYG",
     "value": 60,
     "date": "2025-08-05",
-    "fantasy_team": "Malik NabersNYGWRQ",
+    "fantasy_team": "Team 3",
     "keeper_round": 5,
     "keeper_pick": 12
   },
@@ -155,7 +155,7 @@
     "status": "NYJ",
     "value": 13,
     "date": "2025-08-02",
-    "fantasy_team": "Garrett WilsonNYJWR",
+    "fantasy_team": "Team 3",
     "keeper_round": 2,
     "keeper_pick": 1
   },
@@ -165,7 +165,7 @@
     "status": "Min",
     "value": 12,
     "date": "2025-08-01",
-    "fantasy_team": "Justin JeffersonMinWRQ",
+    "fantasy_team": "Team 3",
     "keeper_round": 1,
     "keeper_pick": 12
   },
@@ -175,7 +175,7 @@
     "status": "Wsh",
     "value": 108,
     "date": "2025-08-09",
-    "fantasy_team": "Jayden DanielsWshQB",
+    "fantasy_team": "Team 3",
     "keeper_round": 9,
     "keeper_pick": 12
   },
@@ -185,7 +185,7 @@
     "status": "Dal",
     "value": 69,
     "date": "2025-08-06",
-    "fantasy_team": "George PickensDalWR",
+    "fantasy_team": "Team 4",
     "keeper_round": 6,
     "keeper_pick": 9
   },
@@ -195,7 +195,7 @@
     "status": "TB",
     "value": 45,
     "date": "2025-08-04",
-    "fantasy_team": "Mike EvansTBWR",
+    "fantasy_team": "Team 4",
     "keeper_round": 4,
     "keeper_pick": 9
   },
@@ -205,7 +205,7 @@
     "status": "Phi",
     "value": 28,
     "date": "2025-08-03",
-    "fantasy_team": "Jalen HurtsPhiQB",
+    "fantasy_team": "Team 4",
     "keeper_round": 3,
     "keeper_pick": 4
   },
@@ -215,7 +215,7 @@
     "status": "Det",
     "value": 52,
     "date": "2025-08-05",
-    "fantasy_team": "Sam LaPortaDetTE",
+    "fantasy_team": "Team 4",
     "keeper_round": 5,
     "keeper_pick": 4
   },
@@ -225,7 +225,7 @@
     "status": "Dal",
     "value": 4,
     "date": "2025-08-01",
-    "fantasy_team": "CeeDee LambDalWR",
+    "fantasy_team": "Team 4",
     "keeper_round": 1,
     "keeper_pick": 4
   },
@@ -235,7 +235,7 @@
     "status": "Ind",
     "value": 21,
     "date": "2025-08-02",
-    "fantasy_team": "Jonathan TaylorIndRB",
+    "fantasy_team": "Team 4",
     "keeper_round": 2,
     "keeper_pick": 9
   },
@@ -245,7 +245,7 @@
     "status": "LAR",
     "value": 22,
     "date": "2025-08-02",
-    "fantasy_team": "Kyren WilliamsLARRB",
+    "fantasy_team": "Team 5",
     "keeper_round": 2,
     "keeper_pick": 10
   },
@@ -255,7 +255,7 @@
     "status": "Buf",
     "value": 99,
     "date": "2025-08-09",
-    "fantasy_team": "Keon ColemanBufWR",
+    "fantasy_team": "Team 5",
     "keeper_round": 9,
     "keeper_pick": 3
   },
@@ -265,7 +265,7 @@
     "status": "Ten",
     "value": 75,
     "date": "2025-08-07",
-    "fantasy_team": "Calvin RidleyTenWRQ",
+    "fantasy_team": "Team 5",
     "keeper_round": 7,
     "keeper_pick": 3
   },
@@ -275,7 +275,7 @@
     "status": "TB",
     "value": 70,
     "date": "2025-08-06",
-    "fantasy_team": "Chris GodwinTBWRO",
+    "fantasy_team": "Team 5",
     "keeper_round": 6,
     "keeper_pick": 10
   },
@@ -285,7 +285,7 @@
     "status": "NO",
     "value": 27,
     "date": "2025-08-03",
-    "fantasy_team": "Alvin KamaraNORB",
+    "fantasy_team": "Team 5",
     "keeper_round": 3,
     "keeper_pick": 3
   },
@@ -295,7 +295,7 @@
     "status": "Sea",
     "value": 46,
     "date": "2025-08-04",
-    "fantasy_team": "Cooper KuppSeaWR",
+    "fantasy_team": "Team 5",
     "keeper_round": 4,
     "keeper_pick": 10
   },
@@ -305,7 +305,7 @@
     "status": "Mia",
     "value": 58,
     "date": "2025-08-05",
-    "fantasy_team": "Jaylen WaddleMiaWR",
+    "fantasy_team": "Team 6",
     "keeper_round": 5,
     "keeper_pick": 10
   },
@@ -315,7 +315,7 @@
     "status": "Cin",
     "value": 10,
     "date": "2025-08-01",
-    "fantasy_team": "Ja'Marr ChaseCinWR",
+    "fantasy_team": "Team 6",
     "keeper_round": 1,
     "keeper_pick": 10
   },
@@ -325,7 +325,7 @@
     "status": "Jax",
     "value": 111,
     "date": "2025-08-10",
-    "fantasy_team": "Brian Thomas Jr.JaxWR",
+    "fantasy_team": "Team 6",
     "keeper_round": 10,
     "keeper_pick": 3
   },
@@ -335,7 +335,7 @@
     "status": "Ari",
     "value": 15,
     "date": "2025-08-02",
-    "fantasy_team": "Marvin Harrison Jr.AriWR",
+    "fantasy_team": "Team 6",
     "keeper_round": 2,
     "keeper_pick": 3
   },
@@ -345,7 +345,7 @@
     "status": "KC",
     "value": 63,
     "date": "2025-08-06",
-    "fantasy_team": "Rashee RiceKCWR",
+    "fantasy_team": "Team 6",
     "keeper_round": 6,
     "keeper_pick": 3
   },
@@ -355,7 +355,7 @@
     "status": "Sea",
     "value": 39,
     "date": "2025-08-04",
-    "fantasy_team": "Kenneth Walker IIISeaRB",
+    "fantasy_team": "Team 6",
     "keeper_round": 4,
     "keeper_pick": 3
   },
@@ -365,7 +365,7 @@
     "status": "Den",
     "value": 169,
     "date": "2025-08-15",
-    "fantasy_team": "Bo NixDenQB",
+    "fantasy_team": "Team 7",
     "keeper_round": 15,
     "keeper_pick": 1
   },
@@ -375,7 +375,7 @@
     "status": "SF",
     "value": 73,
     "date": "2025-08-07",
-    "fantasy_team": "Brian Robinson Jr.SFRB",
+    "fantasy_team": "Team 7",
     "keeper_round": 7,
     "keeper_pick": 1
   },
@@ -385,7 +385,7 @@
     "status": "Ari",
     "value": 72,
     "date": "2025-08-06",
-    "fantasy_team": "James ConnerAriRB",
+    "fantasy_team": "Team 7",
     "keeper_round": 6,
     "keeper_pick": 12
   },
@@ -395,7 +395,7 @@
     "status": "Cin",
     "value": 49,
     "date": "2025-08-05",
-    "fantasy_team": "Tee HigginsCinWR",
+    "fantasy_team": "Team 7",
     "keeper_round": 5,
     "keeper_pick": 1
   },
@@ -405,7 +405,7 @@
     "status": "LV",
     "value": 120,
     "date": "2025-08-10",
-    "fantasy_team": "Jakobi MeyersLVWR",
+    "fantasy_team": "Team 7",
     "keeper_round": 10,
     "keeper_pick": 12
   },
@@ -415,7 +415,7 @@
     "status": "Pit",
     "value": 48,
     "date": "2025-08-04",
-    "fantasy_team": "DK MetcalfPitWR",
+    "fantasy_team": "Team 7",
     "keeper_round": 4,
     "keeper_pick": 12
   },
@@ -425,7 +425,7 @@
     "status": "KC",
     "value": 88,
     "date": "2025-08-08",
-    "fantasy_team": "Xavier WorthyKCWR",
+    "fantasy_team": "Team 8",
     "keeper_round": 8,
     "keeper_pick": 4
   },
@@ -435,7 +435,7 @@
     "status": "Wsh",
     "value": 81,
     "date": "2025-08-07",
-    "fantasy_team": "Terry McLaurinWshWR",
+    "fantasy_team": "Team 8",
     "keeper_round": 7,
     "keeper_pick": 9
   },
@@ -445,7 +445,7 @@
     "status": "TB",
     "value": 177,
     "date": "2025-08-15",
-    "fantasy_team": "Bucky IrvingTBRB",
+    "fantasy_team": "Team 8",
     "keeper_round": 15,
     "keeper_pick": 9
   },
@@ -455,7 +455,7 @@
     "status": "Chi",
     "value": 112,
     "date": "2025-08-10",
-    "fantasy_team": "Caleb WilliamsChiQB",
+    "fantasy_team": "Team 8",
     "keeper_round": 10,
     "keeper_pick": 4
   },
@@ -465,7 +465,7 @@
     "status": "SF",
     "value": 57,
     "date": "2025-08-05",
-    "fantasy_team": "George KittleSFTE",
+    "fantasy_team": "Team 8",
     "keeper_round": 5,
     "keeper_pick": 9
   },
@@ -475,7 +475,7 @@
     "status": "Hou",
     "value": 33,
     "date": "2025-08-03",
-    "fantasy_team": "Nico CollinsHouWR",
+    "fantasy_team": "Team 8",
     "keeper_round": 3,
     "keeper_pick": 9
   },
@@ -485,7 +485,7 @@
     "status": "Cle",
     "value": 143,
     "date": "2025-08-12",
-    "fantasy_team": "Jerry JeudyCleWR",
+    "fantasy_team": "Team 9",
     "keeper_round": 12,
     "keeper_pick": 11
   },
@@ -495,7 +495,7 @@
     "status": "GB",
     "value": 26,
     "date": "2025-08-03",
-    "fantasy_team": "Josh JacobsGBRB",
+    "fantasy_team": "Team 9",
     "keeper_round": 3,
     "keeper_pick": 2
   },
@@ -505,7 +505,7 @@
     "status": "Min",
     "value": 122,
     "date": "2025-08-11",
-    "fantasy_team": "T.J. HockensonMinTE",
+    "fantasy_team": "Team 9",
     "keeper_round": 11,
     "keeper_pick": 2
   },
@@ -515,7 +515,7 @@
     "status": "Cle",
     "value": 98,
     "date": "2025-08-09",
-    "fantasy_team": "David NjokuCleTE",
+    "fantasy_team": "Team 9",
     "keeper_round": 9,
     "keeper_pick": 2
   },
@@ -525,7 +525,7 @@
     "status": "Sea",
     "value": 95,
     "date": "2025-08-08",
-    "fantasy_team": "Jaxon Smith-NjigbaSeaWR",
+    "fantasy_team": "Team 9",
     "keeper_round": 8,
     "keeper_pick": 11
   },
@@ -535,7 +535,7 @@
     "status": "Hou",
     "value": 47,
     "date": "2025-08-04",
-    "fantasy_team": "Joe MixonHouRBO",
+    "fantasy_team": "Team 9",
     "keeper_round": 4,
     "keeper_pick": 11
   },
@@ -545,7 +545,7 @@
     "status": "Chi",
     "value": 104,
     "date": "2025-08-09",
-    "fantasy_team": "Rome OdunzeChiWR",
+    "fantasy_team": "Team 10",
     "keeper_round": 9,
     "keeper_pick": 8
   },
@@ -555,7 +555,7 @@
     "status": "Chi",
     "value": 41,
     "date": "2025-08-04",
-    "fantasy_team": "DJ MooreChiWR",
+    "fantasy_team": "Team 10",
     "keeper_round": 4,
     "keeper_pick": 5
   },
@@ -565,7 +565,7 @@
     "status": "Atl",
     "value": 32,
     "date": "2025-08-03",
-    "fantasy_team": "Drake LondonAtlWR",
+    "fantasy_team": "Team 10",
     "keeper_round": 3,
     "keeper_pick": 8
   },
@@ -575,7 +575,7 @@
     "status": "Bal",
     "value": 17,
     "date": "2025-08-02",
-    "fantasy_team": "Derrick HenryBalRB",
+    "fantasy_team": "Team 10",
     "keeper_round": 2,
     "keeper_pick": 5
   },
@@ -585,7 +585,7 @@
     "status": "LV",
     "value": 113,
     "date": "2025-08-10",
-    "fantasy_team": "Brock BowersLVTE",
+    "fantasy_team": "Team 10",
     "keeper_round": 10,
     "keeper_pick": 5
   },
@@ -595,7 +595,7 @@
     "status": "Det",
     "value": 65,
     "date": "2025-08-06",
-    "fantasy_team": "David MontgomeryDetRB",
+    "fantasy_team": "Team 10",
     "keeper_round": 6,
     "keeper_pick": 5
   },
@@ -605,7 +605,7 @@
     "status": "Phi",
     "value": 30,
     "date": "2025-08-03",
-    "fantasy_team": "A.J. BrownPhiWRQ",
+    "fantasy_team": "Team 11",
     "keeper_round": 3,
     "keeper_pick": 6
   },
@@ -615,7 +615,7 @@
     "status": "Atl",
     "value": 6,
     "date": "2025-08-01",
-    "fantasy_team": "Bijan RobinsonAtlRB",
+    "fantasy_team": "Team 11",
     "keeper_round": 1,
     "keeper_pick": 6
   },
@@ -625,7 +625,7 @@
     "status": "NYJ",
     "value": 19,
     "date": "2025-08-02",
-    "fantasy_team": "Breece HallNYJRB",
+    "fantasy_team": "Team 11",
     "keeper_round": 2,
     "keeper_pick": 7
   },
@@ -635,7 +635,7 @@
     "status": "Car",
     "value": 139,
     "date": "2025-08-12",
-    "fantasy_team": "Chuba HubbardCarRB",
+    "fantasy_team": "Team 11",
     "keeper_round": 12,
     "keeper_pick": 7
   },
@@ -645,7 +645,7 @@
     "status": "Cin",
     "value": 54,
     "date": "2025-08-05",
-    "fantasy_team": "Joe BurrowCinQB",
+    "fantasy_team": "Team 11",
     "keeper_round": 5,
     "keeper_pick": 6
   },
@@ -655,7 +655,7 @@
     "status": "LAC",
     "value": 115,
     "date": "2025-08-10",
-    "fantasy_team": "Ladd McConkeyLACWR",
+    "fantasy_team": "Team 11",
     "keeper_round": 10,
     "keeper_pick": 7
   },
@@ -665,7 +665,7 @@
     "status": "Den",
     "value": 86,
     "date": "2025-08-08",
-    "fantasy_team": "Courtland SuttonDenWR",
+    "fantasy_team": "Team 12",
     "keeper_round": 8,
     "keeper_pick": 2
   },
@@ -675,7 +675,7 @@
     "status": "Phi",
     "value": 11,
     "date": "2025-08-01",
-    "fantasy_team": "Saquon BarkleyPhiRB",
+    "fantasy_team": "Team 12",
     "keeper_round": 1,
     "keeper_pick": 11
   },
@@ -685,7 +685,7 @@
     "status": "Phi",
     "value": 38,
     "date": "2025-08-04",
-    "fantasy_team": "DeVonta SmithPhiWRQ",
+    "fantasy_team": "Team 12",
     "keeper_round": 4,
     "keeper_pick": 2
   },
@@ -695,7 +695,7 @@
     "status": "Det",
     "value": 134,
     "date": "2025-08-12",
-    "fantasy_team": "Jameson WilliamsDetWR",
+    "fantasy_team": "Team 12",
     "keeper_round": 12,
     "keeper_pick": 2
   },
@@ -705,7 +705,7 @@
     "status": "Bal",
     "value": 35,
     "date": "2025-08-03",
-    "fantasy_team": "Lamar JacksonBalQBQ",
+    "fantasy_team": "Team 12",
     "keeper_round": 3,
     "keeper_pick": 11
   },
@@ -715,7 +715,7 @@
     "status": "Chi",
     "value": 59,
     "date": "2025-08-05",
-    "fantasy_team": "D'Andre SwiftChiRB",
+    "fantasy_team": "Team 12",
     "keeper_round": 5,
     "keeper_pick": 11
   }

@@ -3,25 +3,25 @@ async function main() {
   try {
     const res = await fetch("data/data.json");
     data = await res.json();
-    console.log("Data loaded:", data);
   } catch (err) {
-    console.error("Failed to fetch JSON:", err);
-    alert("Failed to load data. Check data/data.json path and GitHub Pages.");
+    console.error("Failed to load JSON:", err);
+    alert("Failed to load data.json.");
     return;
   }
 
-  // Initialize Tabulator table
   const table = new Tabulator("#table", {
     data: data,
     layout: "fitColumns",
     pagination: "local",
-    paginationSize: 10,
+    paginationSize: 15,
     columns: [
-      { title: "ID", field: "id", visible: false }, // Hides ID column
-      { title: "Name", field: "name", sorter: "string" },
-      { title: "Category", field: "category", sorter: "string" },
-      { title: "Status", field: "status", sorter: "string" },
-      { title: "Value", field: "value", sorter: "number" },
+      { title: "Player", field: "name", sorter: "string" },
+      { title: "Position", field: "category", sorter: "string" },
+      { title: "NFL Team", field: "status", sorter: "string" },
+      { title: "Fantasy Team", field: "fantasy_team", sorter: "string" },
+      { title: "Keeper Round", field: "keeper_round", sorter: "number" },
+      { title: "Overall Pick", field: "value", sorter: "number" },
+      { title: "Keeper Pick", field: "keeper_pick", sorter: "number" },
       { title: "Date", field: "date", sorter: "date" },
     ],
   });
@@ -30,25 +30,32 @@ async function main() {
   const searchInput = document.getElementById("search");
   searchInput.addEventListener("input", () => {
     const query = searchInput.value.toLowerCase();
-    table.setFilter((row) => {
-      return Object.values(row.getData()).some((val) =>
+    table.setFilter((row) =>
+      Object.values(row).some((val) =>
         String(val).toLowerCase().includes(query)
-      );
-    });
+      )
+    );
   });
 
-  // Category filter
-  const categorySelect = document.getElementById("category");
-  categorySelect.addEventListener("change", () => {
-    const val = categorySelect.value;
+  // Position filter
+  const positionSelect = document.getElementById("position");
+  positionSelect.addEventListener("change", () => {
+    const val = positionSelect.value;
     table.setFilter(val ? "category" : "", val ? "=" : "", val);
   });
 
-  // Status filter
-  const statusSelect = document.getElementById("status");
-  statusSelect.addEventListener("change", () => {
-    const val = statusSelect.value;
+  // NFL Team filter
+  const nflTeamSelect = document.getElementById("nfl_team");
+  nflTeamSelect.addEventListener("change", () => {
+    const val = nflTeamSelect.value;
     table.setFilter(val ? "status" : "", val ? "=" : "", val);
+  });
+
+  // Fantasy Team filter
+  const fantasyTeamSelect = document.getElementById("fantasy_team");
+  fantasyTeamSelect.addEventListener("change", () => {
+    const val = fantasyTeamSelect.value;
+    table.setFilter(val ? "fantasy_team" : "", val ? "=" : "", val);
   });
 }
 
