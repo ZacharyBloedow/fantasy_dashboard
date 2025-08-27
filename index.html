@@ -7,66 +7,122 @@
       href="https://unpkg.com/tabulator-tables@5.5.0/dist/css/tabulator.min.css"
       rel="stylesheet"
     />
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 20px;
-      }
-      #fantasy-table {
-        margin-top: 20px;
-      }
-    </style>
+    <link rel="stylesheet" href="assets/styles.css" />
   </head>
   <body>
-    <h1>Fantasy Dashboard</h1>
+    <h1>2025 Keepers</h1>
+
+    <div class="filter-container">
+      <select id="positionFilter">
+        <option value="">All Positions</option>
+      </select>
+
+      <select id="nflTeamFilter">
+        <option value="">All NFL Teams</option>
+      </select>
+
+      <select id="fantasyTeamFilter">
+        <option value="">All Fantasy Teams</option>
+      </select>
+
+      <select id="keeperRoundFilter">
+        <option value="">All Keeper Rounds</option>
+      </select>
+    </div>
+
     <div id="fantasy-table"></div>
 
     <script src="https://unpkg.com/tabulator-tables@5.5.0/dist/js/tabulator.min.js"></script>
     <script>
-      // Create Tabulator table
-      let table = new Tabulator("#fantasy-table", {
-        layout: "fitColumns",
-        placeholder: "No data available",
-        columns: [
-          { title: "Player", field: "name", headerFilter: "input" },
-          {
-            title: "Position",
-            field: "category",
-            headerFilter: "select",
-            headerFilterParams: { values: true },
-          },
-          {
-            title: "NFL Team",
-            field: "status",
-            headerFilter: "select",
-            headerFilterParams: { values: true },
-          },
-          {
-            title: "Fantasy Team",
-            field: "fantasy_team",
-            headerFilter: "select",
-            headerFilterParams: { values: true },
-          },
-          {
-            title: "Keeper Round",
-            field: "keeper_round",
-            headerFilter: "select",
-            headerFilterParams: { values: true },
-          },
-          { title: "Keeper Pick", field: "keeper_pick" },
-          { title: "Overall Pick", field: "value" },
-        ],
-      });
-
-      // Fetch JSON data from the data folder
       fetch("data/data.json")
-        .then((response) => {
-          if (!response.ok)
-            throw new Error(`HTTP error! status: ${response.status}`);
-          return response.json();
+        .then((response) => response.json())
+        .then((data) => {
+          // --- Populate dropdowns ---
+          const positions = Array.from(
+            new Set(data.map((d) => d.category))
+          ).sort();
+          const nflTeams = Array.from(
+            new Set(data.map((d) => d.status))
+          ).sort();
+          const fantasyTeams = Array.from(
+            new Set(data.map((d) => d.fantasy_team))
+          ).sort();
+
+          const positionSelect = document.getElementById("positionFilter");
+          positions.forEach((pos) => {
+            const opt = document.createElement("option");
+            opt.value = pos;
+            opt.textContent = pos;
+            positionSelect.appendChild(opt);
+          });
+
+          const nflSelect = document.getElementById("nflTeamFilter");
+          nflTeams.forEach((team) => {
+            const opt = document.createElement("option");
+            opt.value = team;
+            opt.textContent = team;
+            nflSelect.appendChild(opt);
+          });
+
+          const fantasySelect = document.getElementById("fantasyTeamFilter");
+          fantasyTeams.forEach((team) => {
+            const opt = document.createElement("option");
+            opt.value = team;
+            opt.textContent = team;
+            fantasySelect.appendChild(opt);
+          });
+
+          const keeperSelect = document.getElementById("keeperRoundFilter");
+          for (let i = 1; i <= 15; i++) {
+            const opt = document.createElement("option");
+            opt.value = i;
+            opt.textContent = i;
+            keeperSelect.appendChild(opt);
+          }
+
+          // --- Initialize Tabulator ---
+          const table = new Tabulator("#fantasy-table", {
+            data: data,
+            layout: "fitColumns",
+            columns: [
+              { title: "Player", field: "name", headerFilter: false },
+              { title: "Position", field: "category" },
+              { title: "NFL Team", field: "status" },
+              { title: "Fantasy Team", field: "fantasy_team" },
+              { title: "Keeper Round", field: "keeper_round" },
+              { title: "Keeper Pick", field: "keeper_pick" },
+              { title: "ADP", field: "ADP", sorter: "number" },
+            ],
+            initialSort: [{ column: "value", dir: "asc" }],
+          });
+
+          // --- Filter functions ---
+          function applyFilters() {
+            const pos = positionSelect.value;
+            const nfl = nflSelect.value;
+            const fantasy = fantasySelect.value;
+            const round = keeperSelect.value;
+
+            table.setFilter(
+              [
+                pos ? { field: "category", type: "=", value: pos } : null,
+                nfl ? { field: "status", type: "=", value: nfl } : null,
+                fantasy
+                  ? { field: "fantasy_team", type: "=", value: fantasy }
+                  : null,
+                round
+                  ? { field: "keeper_round", type: "=", value: parseInt(round) }
+                  : null,
+              ].filter(Boolean)
+            );
+          }
+
+          positionSelect.addEventListener("change", applyFilters);
+          nflSelect.addEventListener("change", applyFilters);
+          fantasySelect.addEventListener("change", applyFilters);
+          keeperSelect.addEventListener("change", applyFilters);
         })
-        .then((data) => table.setData(data))
-        .catch((err) => console.error("Failed to fetch data.json:", err));
+        .catch((err) => console.error("Failed to load JSON:", err));
     </script>
   </body>
 </html>

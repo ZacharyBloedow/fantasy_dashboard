@@ -1,23 +1,54 @@
+/* General page */
 body {
   font-family: Arial, sans-serif;
   margin: 20px;
-  background: #f7f7f7;
+  background-color: #1e1e2f; /* dark background */
+  color: #f5f5f5; /* light text */
 }
 
+/* Page title */
 h1 {
   text-align: center;
+  color: #fcfcfc; /* gold */
+}
+
+/* Filter section */
+.filter-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
   margin-bottom: 20px;
 }
 
-.filters {
-  margin-bottom: 10px;
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
+.filter-container select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background-color: #2e2e3f;
+  color: #f5f5f5;
+  font-size: 14px;
 }
 
-.filters input,
-.filters select {
-  padding: 5px;
-  font-size: 14px;
+/* Tabulator table tweaks */
+.tabulator {
+  background-color: #2a2a3a;
+  border: 1px solid #444;
+}
+
+.tabulator .tabulator-header {
+  background-color: #333;
+  color: #2a2a3a;
+}
+
+.tabulator .tabulator-row {
+  background-color: #2a2a3a;
+  color: #f5f5f5;
+}
+
+.tabulator .tabulator-row:nth-child(even) {
+  background-color: #242435;
+}
+
+.tabulator .tabulator-row:hover {
+  background-color: #444;
 }
