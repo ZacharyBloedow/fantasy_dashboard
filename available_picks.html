@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Available Picks</title>
+    <link
+      href="https://unpkg.com/tabulator-tables@5.5.0/dist/css/tabulator.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <!-- Top-right buttons -->
+    <div
+      style="
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: flex;
+        gap: 10px;
+      "
+    >
+      <a href="index.html" class="button"><span class="text">Keepers</span></a>
+      <a href="available_players.html" class="button"
+        ><span class="text">Available Players</span></a
+      >
+    </div>
+
+    <h1>Available Picks</h1>
+
+    <div class="filter-container">
+      <select id="fantasyTeamFilter">
+        <option value="">All Teams</option>
+      </select>
+
+      <select id="roundFilter">
+        <option value="">All Rounds</option>
+      </select>
+
+      <label for="hideKeepers">
+        <input type="checkbox" id="hideKeepers" /> Hide Keepers
+      </label>
+    </div>
+
+    <div id="picks-table"></div>
+
+    <script src="https://unpkg.com/tabulator-tables@5.5.0/dist/js/tabulator.min.js"></script>
+    <script>
+      fetch("data/available_picks.json")
+        .then((res) => res.json())
+        .then((data) => {
+          // Ensure round and pick are numbers
+          data.forEach((d) => {
+            d.round = Number(d.round);
+            d.pick = Number(d.pick);
+          });
+
+          // Populate filters
+          const fantasyTeams = [
+            ...new Set(data.map((d) => d.fantasy_team)),
+          ].sort();
+          const fantasySelect = document.getElementById("fantasyTeamFilter");
+          fantasyTeams.forEach((team) => {
+            const opt = document.createElement("option");
+            opt.value = team;
+            opt.textContent = team;
+            fantasySelect.appendChild(opt);
+          });
+
+          const rounds = [...new Set(data.map((d) => d.round))].sort(
+            (a, b) => a - b
+          );
+          const roundSelect = document.getElementById("roundFilter");
+          rounds.forEach((r) => {
+            const opt = document.createElement("option");
+            opt.value = r;
+            opt.textContent = r;
+            roundSelect.appendChild(opt);
+          });
+
+          // Initialize Tabulator
+          const table = new Tabulator("#picks-table", {
+            data,
+            layout: "fitColumns",
+            pagination: false,
+            columns: [
+              { title: "Team", field: "fantasy_team" },
+              { title: "Draft Round", field: "round", sorter: "number" },
+              { title: "Pick #", field: "pick", sorter: "number" },
+              { title: "Overall #", field: "overall", sorter: "number" },
+              { title: "Notes", field: "notes", visible: false },
+              { title: "Keeper?", field: "keeper" },
+            ],
+            initialSort: [
+              { column: "overall", dir: "asc" }, // initial sort by overall pick
+            ],
+            reactiveData: true,
+          });
+
+          // Adjust sorting based on filters
+          function applyFilters() {
+            const selectedTeam = fantasySelect.value;
+            const selectedRound = roundSelect.value;
+            const hideKeepers = document.getElementById("hideKeepers").checked;
+
+            const filters = [];
+            let sorters = [];
+
+            if (selectedTeam)
+              filters.push({
+                field: "fantasy_team",
+                type: "=",
+                value: selectedTeam,
+              });
+            if (selectedRound)
+              filters.push({
+                field: "round",
+                type: "=",
+                value: Number(selectedRound),
+              });
+            if (hideKeepers)
+              filters.push({ field: "keeper", type: "!=", value: "yes" });
+
+            table.setFilter(filters);
+
+            // Dynamic sorting based on filters
+            if (selectedTeam && !selectedRound) {
+              // Filtered by team only → sort by round then pick
+              sorters = [{ column: "round", dir: "asc" }];
+            } else if (selectedRound && !selectedTeam) {
+              // Filtered by round only → sort by pick then team
+              sorters = [{ column: "pick", dir: "asc" }];
+            } else {
+              // No filters → keep initial sort by overall
+              sorters = [{ column: "overall", dir: "asc" }];
+            }
+
+            table.setSort(sorters);
+          }
+
+          fantasySelect.addEventListener("change", applyFilters);
+          roundSelect.addEventListener("change", applyFilters);
+          document
+            .getElementById("hideKeepers")
+            .addEventListener("change", applyFilters);
+        })
+        .catch((err) => console.error("Failed to load JSON:", err));
+    </script>
+  </body>
+</html>

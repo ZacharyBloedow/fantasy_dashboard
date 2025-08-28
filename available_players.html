@@ -3,59 +3,63 @@
   <head>
     <meta charset="UTF-8" />
     <title>Available Players</title>
+    <link
+      href="https://unpkg.com/tabulator-tables@5.5.0/dist/css/tabulator.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 20px;
+      /* Optional: extra styling for the button */
+      #backButton {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        padding: 8px 12px;
+        background: #007bff;
+        color: white;
+        border-radius: 5px;
+        text-decoration: none;
       }
-      table {
-        border-collapse: collapse;
-        width: 100%;
-        margin-top: 10px;
-      }
-      th,
-      td {
-        border: 1px solid #ddd;
-        padding: 8px;
-        text-align: left;
-      }
-      th {
-        background-color: #f2f2f2;
-      }
-      select {
-        margin-right: 10px;
-      }
-      #filters {
-        margin-bottom: 10px;
+
+      .filter-container {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 20px;
       }
     </style>
   </head>
   <body>
-    <h1>Available Players</h1>
+    <div
+      style="
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: flex;
+        gap: 10px;
+      "
+    >
+      <a href="index.html" class="button">
+        <span class="text">Keepers</span>
+      </a>
+      <a href="available_picks.html" class="button">
+        <span class="text">Available Picks</span>
+      </a>
+    </div>
 
-    <div id="filters">
-      <label for="teamFilter">Team:</label>
+    <div class="filter-container">
       <select id="teamFilter">
-        <option value="">All</option>
+        <option value="">All Teams</option>
       </select>
 
-      <label for="positionFilter">Position:</label>
       <select id="positionFilter">
-        <option value="">All</option>
+        <option value="">All Positions</option>
       </select>
     </div>
 
-    <table id="playersTable">
-      <thead>
-        <tr>
-          <th>Player</th>
-          <th>Team</th>
-          <th>Position</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
+    <div id="players-table"></div>
 
+    <script src="https://unpkg.com/tabulator-tables@5.5.0/dist/js/tabulator.min.js"></script>
     <script>
       let playersData = [];
 
@@ -63,48 +67,55 @@
         .then((res) => res.json())
         .then((data) => {
           playersData = data;
-          populateFilters();
-          renderTable(playersData);
+
+          // Populate filter dropdowns
+          const teamSet = [...new Set(playersData.map((p) => p.team))].sort();
+          const positionSet = [
+            ...new Set(playersData.map((p) => p.position)),
+          ].sort();
+
+          const teamFilter = document.getElementById("teamFilter");
+          const positionFilter = document.getElementById("positionFilter");
+
+          teamSet.forEach((team) => teamFilter.add(new Option(team, team)));
+          positionSet.forEach((pos) =>
+            positionFilter.add(new Option(pos, pos))
+          );
+
+          // Initialize Tabulator table
+          const table = new Tabulator("#players-table", {
+            data: playersData,
+            layout: "fitColumns",
+            pagination: "local",
+            paginationSize: 400,
+            columns: [
+              { title: "Player", field: "player", sorter: "string" },
+              { title: "Team", field: "team", sorter: "string" },
+              { title: "Position", field: "position", sorter: "string" },
+            ],
+          });
+
+          // Filter function
+          function applyFilters() {
+            const selectedTeam = teamFilter.value;
+            const selectedPosition = positionFilter.value;
+
+            table.setFilter(
+              [
+                selectedTeam
+                  ? { field: "team", type: "=", value: selectedTeam }
+                  : null,
+                selectedPosition
+                  ? { field: "position", type: "=", value: selectedPosition }
+                  : null,
+              ].filter(Boolean)
+            );
+          }
+
+          teamFilter.addEventListener("change", applyFilters);
+          positionFilter.addEventListener("change", applyFilters);
         })
-        .catch((err) => console.error(err));
-
-      function populateFilters() {
-        const teams = [...new Set(playersData.map((p) => p.team))];
-        const positions = [...new Set(playersData.map((p) => p.position))];
-
-        const teamFilter = document.getElementById("teamFilter");
-        const positionFilter = document.getElementById("positionFilter");
-
-        teams.forEach((t) => teamFilter.add(new Option(t, t)));
-        positions.forEach((p) => positionFilter.add(new Option(p, p)));
-
-        teamFilter.addEventListener("change", filterPlayers);
-        positionFilter.addEventListener("change", filterPlayers);
-      }
-
-      function filterPlayers() {
-        const selectedTeam = document.getElementById("teamFilter").value;
-        const selectedPosition =
-          document.getElementById("positionFilter").value;
-
-        const filtered = playersData.filter(
-          (p) =>
-            (!selectedTeam || p.team === selectedTeam) &&
-            (!selectedPosition || p.position === selectedPosition)
-        );
-
-        renderTable(filtered);
-      }
-
-      function renderTable(data) {
-        const tbody = document.querySelector("#playersTable tbody");
-        tbody.innerHTML = "";
-        data.forEach((p) => {
-          const row = document.createElement("tr");
-          row.innerHTML = `<td>${p.player}</td><td>${p.team}</td><td>${p.position}</td>`;
-          tbody.appendChild(row);
-        });
-      }
+        .catch((err) => console.error("Failed to load JSON:", err));
     </script>
   </body>
 </html>
