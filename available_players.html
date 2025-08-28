@@ -62,7 +62,7 @@
       let playersData = [];
 
       // Load JSON data
-      fetch("players.json")
+      fetch("data/available_players.json")
         .then((response) => response.json())
         .then((data) => {
           playersData = data;
