@@ -53,73 +53,55 @@
           <th>Position</th>
         </tr>
       </thead>
-      <tbody>
-        <!-- Players will populate here -->
-      </tbody>
+      <tbody></tbody>
     </table>
 
     <script>
       let playersData = [];
 
-      // Load JSON data
       fetch("data/available_players.json")
-        .then((response) => response.json())
+        .then((res) => res.json())
         .then((data) => {
           playersData = data;
           populateFilters();
           renderTable(playersData);
-        });
+        })
+        .catch((err) => console.error(err));
 
-      // Populate filter dropdowns dynamically
       function populateFilters() {
-        const teamSet = new Set(playersData.map((p) => p.team));
-        const positionSet = new Set(playersData.map((p) => p.position));
+        const teams = [...new Set(playersData.map((p) => p.team))];
+        const positions = [...new Set(playersData.map((p) => p.position))];
 
         const teamFilter = document.getElementById("teamFilter");
         const positionFilter = document.getElementById("positionFilter");
 
-        teamSet.forEach((team) => {
-          const option = document.createElement("option");
-          option.value = team;
-          option.textContent = team;
-          teamFilter.appendChild(option);
-        });
+        teams.forEach((t) => teamFilter.add(new Option(t, t)));
+        positions.forEach((p) => positionFilter.add(new Option(p, p)));
 
-        positionSet.forEach((pos) => {
-          const option = document.createElement("option");
-          option.value = pos;
-          option.textContent = pos;
-          positionFilter.appendChild(option);
-        });
-
-        // Add event listeners
         teamFilter.addEventListener("change", filterPlayers);
         positionFilter.addEventListener("change", filterPlayers);
       }
 
-      // Filter players and render table
       function filterPlayers() {
         const selectedTeam = document.getElementById("teamFilter").value;
         const selectedPosition =
           document.getElementById("positionFilter").value;
 
-        const filtered = playersData.filter((player) => {
-          return (
-            (selectedTeam === "" || player.team === selectedTeam) &&
-            (selectedPosition === "" || player.position === selectedPosition)
-          );
-        });
+        const filtered = playersData.filter(
+          (p) =>
+            (!selectedTeam || p.team === selectedTeam) &&
+            (!selectedPosition || p.position === selectedPosition)
+        );
 
         renderTable(filtered);
       }
 
       function renderTable(data) {
         const tbody = document.querySelector("#playersTable tbody");
-        tbody.innerHTML = ""; // Clear table
-
-        data.forEach((player) => {
+        tbody.innerHTML = "";
+        data.forEach((p) => {
           const row = document.createElement("tr");
-          row.innerHTML = `<td>${player.player}</td><td>${player.team}</td><td>${player.position}</td>`;
+          row.innerHTML = `<td>${p.player}</td><td>${p.team}</td><td>${p.position}</td>`;
           tbody.appendChild(row);
         });
       }

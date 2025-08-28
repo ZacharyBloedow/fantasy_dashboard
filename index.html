@@ -32,15 +32,12 @@
       <select id="positionFilter">
         <option value="">All Positions</option>
       </select>
-
       <select id="nflTeamFilter">
         <option value="">All NFL Teams</option>
       </select>
-
       <select id="fantasyTeamFilter">
         <option value="">All Fantasy Teams</option>
       </select>
-
       <select id="keeperRoundFilter">
         <option value="">All Keeper Rounds</option>
       </select>
@@ -51,57 +48,33 @@
     <script src="https://unpkg.com/tabulator-tables@5.5.0/dist/js/tabulator.min.js"></script>
     <script>
       fetch("data/data.json")
-        .then((response) => response.json())
+        .then((res) => res.json())
         .then((data) => {
-          // --- Populate dropdowns ---
-          const positions = Array.from(
-            new Set(data.map((d) => d.category))
-          ).sort();
-          const nflTeams = Array.from(
-            new Set(data.map((d) => d.status))
-          ).sort();
-          const fantasyTeams = Array.from(
-            new Set(data.map((d) => d.fantasy_team))
-          ).sort();
+          // Populate dropdowns
+          const positions = [...new Set(data.map((d) => d.category))].sort();
+          const teams = [...new Set(data.map((d) => d.status))].sort();
+          const fantasyTeams = [
+            ...new Set(data.map((d) => d.fantasy_team)),
+          ].sort();
 
           const positionSelect = document.getElementById("positionFilter");
-          positions.forEach((pos) => {
-            const opt = document.createElement("option");
-            opt.value = pos;
-            opt.textContent = pos;
-            positionSelect.appendChild(opt);
-          });
+          positions.forEach((p) => positionSelect.add(new Option(p, p)));
 
           const nflSelect = document.getElementById("nflTeamFilter");
-          nflTeams.forEach((team) => {
-            const opt = document.createElement("option");
-            opt.value = team;
-            opt.textContent = team;
-            nflSelect.appendChild(opt);
-          });
+          teams.forEach((t) => nflSelect.add(new Option(t, t)));
 
           const fantasySelect = document.getElementById("fantasyTeamFilter");
-          fantasyTeams.forEach((team) => {
-            const opt = document.createElement("option");
-            opt.value = team;
-            opt.textContent = team;
-            fantasySelect.appendChild(opt);
-          });
+          fantasyTeams.forEach((t) => fantasySelect.add(new Option(t, t)));
 
           const keeperSelect = document.getElementById("keeperRoundFilter");
-          for (let i = 1; i <= 15; i++) {
-            const opt = document.createElement("option");
-            opt.value = i;
-            opt.textContent = i;
-            keeperSelect.appendChild(opt);
-          }
+          for (let i = 1; i <= 15; i++) keeperSelect.add(new Option(i, i));
 
-          // --- Initialize Tabulator ---
+          // Initialize table
           const table = new Tabulator("#fantasy-table", {
-            data: data,
+            data,
             layout: "fitColumns",
             columns: [
-              { title: "Player", field: "name", headerFilter: false },
+              { title: "Player", field: "name" },
               { title: "Position", field: "category" },
               { title: "NFL Team", field: "status" },
               { title: "Fantasy Team", field: "fantasy_team" },
@@ -109,25 +82,34 @@
               { title: "Keeper Pick", field: "keeper_pick" },
               { title: "ADP", field: "ADP", sorter: "number" },
             ],
-            initialSort: [{ column: "value", dir: "asc" }],
           });
 
-          // --- Filter functions ---
           function applyFilters() {
-            const pos = positionSelect.value;
-            const nfl = nflSelect.value;
-            const fantasy = fantasySelect.value;
-            const round = keeperSelect.value;
-
             table.setFilter(
               [
-                pos ? { field: "category", type: "=", value: pos } : null,
-                nfl ? { field: "status", type: "=", value: nfl } : null,
-                fantasy
-                  ? { field: "fantasy_team", type: "=", value: fantasy }
+                positionSelect.value
+                  ? {
+                      field: "category",
+                      type: "=",
+                      value: positionSelect.value,
+                    }
                   : null,
-                round
-                  ? { field: "keeper_round", type: "=", value: parseInt(round) }
+                nflSelect.value
+                  ? { field: "status", type: "=", value: nflSelect.value }
+                  : null,
+                fantasySelect.value
+                  ? {
+                      field: "fantasy_team",
+                      type: "=",
+                      value: fantasySelect.value,
+                    }
+                  : null,
+                keeperSelect.value
+                  ? {
+                      field: "keeper_round",
+                      type: "=",
+                      value: parseInt(keeperSelect.value),
+                    }
                   : null,
               ].filter(Boolean)
             );
@@ -138,7 +120,7 @@
           fantasySelect.addEventListener("change", applyFilters);
           keeperSelect.addEventListener("change", applyFilters);
         })
-        .catch((err) => console.error("Failed to load JSON:", err));
+        .catch((err) => console.error(err));
     </script>
   </body>
 </html>
