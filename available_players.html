@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Available Players</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 10px;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      select {
+        margin-right: 10px;
+      }
+      #filters {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Available Players</h1>
+
+    <div id="filters">
+      <label for="teamFilter">Team:</label>
+      <select id="teamFilter">
+        <option value="">All</option>
+      </select>
+
+      <label for="positionFilter">Position:</label>
+      <select id="positionFilter">
+        <option value="">All</option>
+      </select>
+    </div>
+
+    <table id="playersTable">
+      <thead>
+        <tr>
+          <th>Player</th>
+          <th>Team</th>
+          <th>Position</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Players will populate here -->
+      </tbody>
+    </table>
+
+    <script>
+      let playersData = [];
+
+      // Load JSON data
+      fetch("players.json")
+        .then((response) => response.json())
+        .then((data) => {
+          playersData = data;
+          populateFilters();
+          renderTable(playersData);
+        });
+
+      // Populate filter dropdowns dynamically
+      function populateFilters() {
+        const teamSet = new Set(playersData.map((p) => p.team));
+        const positionSet = new Set(playersData.map((p) => p.position));
+
+        const teamFilter = document.getElementById("teamFilter");
+        const positionFilter = document.getElementById("positionFilter");
+
+        teamSet.forEach((team) => {
+          const option = document.createElement("option");
+          option.value = team;
+          option.textContent = team;
+          teamFilter.appendChild(option);
+        });
+
+        positionSet.forEach((pos) => {
+          const option = document.createElement("option");
+          option.value = pos;
+          option.textContent = pos;
+          positionFilter.appendChild(option);
+        });
+
+        // Add event listeners
+        teamFilter.addEventListener("change", filterPlayers);
+        positionFilter.addEventListener("change", filterPlayers);
+      }
+
+      // Filter players and render table
+      function filterPlayers() {
+        const selectedTeam = document.getElementById("teamFilter").value;
+        const selectedPosition =
+          document.getElementById("positionFilter").value;
+
+        const filtered = playersData.filter((player) => {
+          return (
+            (selectedTeam === "" || player.team === selectedTeam) &&
+            (selectedPosition === "" || player.position === selectedPosition)
+          );
+        });
+
+        renderTable(filtered);
+      }
+
+      function renderTable(data) {
+        const tbody = document.querySelector("#playersTable tbody");
+        tbody.innerHTML = ""; // Clear table
+
+        data.forEach((player) => {
+          const row = document.createElement("tr");
+          row.innerHTML = `<td>${player.player}</td><td>${player.team}</td><td>${player.position}</td>`;
+          tbody.appendChild(row);
+        });
+      }
+    </script>
+  </body>
+</html>

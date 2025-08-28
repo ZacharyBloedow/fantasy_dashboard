@@ -1,0 +1,417 @@
+[
+    {
+        "player": "Christian McCaffrey",
+        "team": "SF",
+        "position": "RB"
+    },
+    {
+        "player": "Ashton Jeanty",
+        "team": "LV",
+        "position": "RB"
+    },
+    {
+        "player": "Davante Adams",
+        "team": "LAR",
+        "position": "WR"
+    },
+    {
+        "player": "Omarion Hampton",
+        "team": "LAC",
+        "position": "RB"
+    },
+    {
+        "player": "TreVeyon Henderson",
+        "team": "NE",
+        "position": "RB"
+    },
+    {
+        "player": "Chris Olave",
+        "team": "NO",
+        "position": "WR"
+    },
+    {
+        "player": "Matthew Golden",
+        "team": "GB",
+        "position": "WR"
+    },
+    {
+        "player": "Stefon Diggs Q",
+        "team": "NE",
+        "position": "WR"
+    },
+    {
+        "player": "Tyrone Tracy Jr.",
+        "team": "NYG",
+        "position": "RB"
+    },
+    {
+        "player": "Travis Kelce",
+        "team": "KC",
+        "position": "TE"
+    },
+    {
+        "player": "Brock Purdy",
+        "team": "SF",
+        "position": "QB"
+    },
+    {
+        "player": "Rhamondre Stevenson Q",
+        "team": "NE",
+        "position": "RB"
+    },
+    {
+        "player": "Emeka Egbuka",
+        "team": "TB",
+        "position": "WR"
+    },
+    {
+        "player": "Jauan Jennings Q",
+        "team": "SF",
+        "position": "WR"
+    },
+    {
+        "player": "Ricky Pearsall",
+        "team": "SF",
+        "position": "WR"
+    },
+    {
+        "player": "Justin Herbert",
+        "team": "LAC",
+        "position": "QB"
+    },
+    {
+        "player": "Justin Fields",
+        "team": "NYJ",
+        "position": "QB"
+    },
+    {
+        "player": "Jayden Reed Q",
+        "team": "GB",
+        "position": "WR"
+    },
+    {
+        "player": "Keenan Allen",
+        "team": "LAC",
+        "position": "WR"
+    },
+    {
+        "player": "Rashid Shaheed",
+        "team": "NO",
+        "position": "WR"
+    },
+    {
+        "player": "Cam Skattebo",
+        "team": "NYG",
+        "position": "RB"
+    },
+    {
+        "player": "Rachaad White Q",
+        "team": "TB",
+        "position": "RB"
+    },
+    {
+        "player": "Quinshon Judkins",
+        "team": "FA",
+        "position": "RB"
+    },
+    {
+        "player": "Drake Maye",
+        "team": "NE",
+        "position": "QB"
+    },
+    {
+        "player": "Jordan Love",
+        "team": "GB",
+        "position": "QB"
+    },
+    {
+        "player": "Tucker Kraft",
+        "team": "GB",
+        "position": "TE"
+    },
+    {
+        "player": "Braelon Allen",
+        "team": "NYJ",
+        "position": "RB"
+    },
+    {
+        "player": "Hollywood Brown Q",
+        "team": "KC",
+        "position": "WR"
+    },
+    {
+        "player": "Brandon Aiyuk O",
+        "team": "SF",
+        "position": "WR"
+    },
+    {
+        "player": "Hunter Henry",
+        "team": "NE",
+        "position": "TE"
+    },
+    {
+        "player": "Matthew Stafford",
+        "team": "LAR",
+        "position": "QB"
+    },
+    {
+        "player": "Najee Harris Q",
+        "team": "LAC",
+        "position": "RB"
+    },
+    {
+        "player": "Wan'Dale Robinson",
+        "team": "NYG",
+        "position": "WR"
+    },
+    {
+        "player": "DeMario Douglas",
+        "team": "NE",
+        "position": "WR"
+    },
+    {
+        "player": "Tre Harris Q",
+        "team": "LAC",
+        "position": "WR"
+    },
+    {
+        "player": "MarShawn Lloyd IR",
+        "team": "GB",
+        "position": "RB"
+    },
+    {
+        "player": "Jack Bech",
+        "team": "LV",
+        "position": "WR"
+    },
+    {
+        "player": "Kyle Williams Q",
+        "team": "NE",
+        "position": "WR"
+    },
+    {
+        "player": "Romeo Doubs",
+        "team": "GB",
+        "position": "WR"
+    },
+    {
+        "player": "Diontae Johnson",
+        "team": "FA",
+        "position": "WR"
+    },
+    {
+        "player": "Brandin Cooks",
+        "team": "NO",
+        "position": "WR"
+    },
+    {
+        "player": "Darius Slayton",
+        "team": "NYG",
+        "position": "WR"
+    },
+    {
+        "player": "Cade Otton Q",
+        "team": "TB",
+        "position": "TE"
+    },
+    {
+        "player": "Quentin Johnston Q",
+        "team": "LAC",
+        "position": "WR"
+    },
+    {
+        "player": "Dont'e Thornton Jr.",
+        "team": "LV",
+        "position": "WR"
+    },
+    {
+        "player": "Kareem Hunt",
+        "team": "KC",
+        "position": "RB"
+    },
+    {
+        "player": "Blake Corum",
+        "team": "LAR",
+        "position": "RB"
+    },
+    {
+        "player": "Mason Taylor",
+        "team": "NYJ",
+        "position": "TE"
+    },
+    {
+        "player": "Geno Smith",
+        "team": "LV",
+        "position": "QB"
+    },
+    {
+        "player": "Kendre Miller",
+        "team": "NO",
+        "position": "RB"
+    },
+    {
+        "player": "Amari Cooper",
+        "team": "LV",
+        "position": "WR"
+    },
+    {
+        "player": "Gabe Davis Q",
+        "team": "FA",
+        "position": "WR"
+    },
+    {
+        "player": "Josh Reynolds",
+        "team": "NYJ",
+        "position": "WR"
+    },
+    {
+        "player": "Tutu Atwell",
+        "team": "LAR",
+        "position": "WR"
+    },
+    {
+        "player": "Christian Watson O",
+        "team": "GB",
+        "position": "WR"
+    },
+    {
+        "player": "Tre Tucker",
+        "team": "LV",
+        "position": "WR"
+    },
+    {
+        "player": "Elijah Mitchell",
+        "team": "KC",
+        "position": "RB"
+    },
+    {
+        "player": "Raheem Mostert",
+        "team": "LV",
+        "position": "RB"
+    },
+    {
+        "player": "Clyde Edwards-Helaire",
+        "team": "FA",
+        "position": "RB"
+    },
+    {
+        "player": "Isaac Guerendo",
+        "team": "SF",
+        "position": "RB"
+    },
+    {
+        "player": "Sean Tucker",
+        "team": "TB",
+        "position": "RB"
+    },
+    {
+        "player": "Isaiah Davis Q",
+        "team": "NYJ",
+        "position": "RB"
+    },
+    {
+        "player": "Devin Neal",
+        "team": "NO",
+        "position": "RB"
+    },
+    {
+        "player": "Kyle Juszczyk",
+        "team": "SF",
+        "position": "RB"
+    },
+    {
+        "player": "Allen Lazard Q",
+        "team": "NYJ",
+        "position": "WR"
+    },
+    {
+        "player": "Tyler Higbee",
+        "team": "LAR",
+        "position": "TE"
+    },
+    {
+        "player": "Jalen McMillan IR",
+        "team": "TB",
+        "position": "WR"
+    },
+    {
+        "player": "Jarquez Hunter",
+        "team": "LAR",
+        "position": "RB"
+    },
+    {
+        "player": "Russell Wilson",
+        "team": "NYG",
+        "position": "QB"
+    },
+    {
+        "player": "Chris Brooks",
+        "team": "GB",
+        "position": "RB"
+    },
+    {
+        "player": "Sincere McCormick",
+        "team": "FA",
+        "position": "RB"
+    },
+    {
+        "player": "Brashard Smith",
+        "team": "KC",
+        "position": "RB"
+    },
+    {
+        "player": "Jordan Whittington",
+        "team": "LAR",
+        "position": "WR"
+    },
+    {
+        "player": "Theo Johnson",
+        "team": "NYG",
+        "position": "TE"
+    },
+    {
+        "player": "Juwan Johnson",
+        "team": "NO",
+        "position": "TE"
+    },
+    {
+        "player": "Michael Mayer",
+        "team": "LV",
+        "position": "TE"
+    },
+    {
+        "player": "Devaughn Vele",
+        "team": "NO",
+        "position": "WR"
+    },
+    {
+        "player": "Tyler Shough",
+        "team": "NO",
+        "position": "QB"
+    },
+    {
+        "player": "Jaxson Dart",
+        "team": "NYG",
+        "position": "QB"
+    },
+    {
+        "player": "Jordan James Q",
+        "team": "SF",
+        "position": "RB"
+    },
+    {
+        "player": "Devin Singletary",
+        "team": "NYG",
+        "position": "RB"
+    },
+    {
+        "player": "Emanuel Wilson",
+        "team": "GB",
+        "position": "RB"
+    },
+    {
+        "player": "Antonio Gibson",
+        "team": "NE",
+        "position": "RB"
+    }
+]
